@@ -96,14 +96,14 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2.5 mb-1">
-            <span className="w-7 h-7 rounded-full bg-[#74B4DA] text-[#10367D] font-bold font-number text-xs flex items-center justify-center border border-[#74B4DA]">
+            <span className="w-7 h-7 rounded-full bg-[#EF5F18] text-[#261A66] font-bold font-number text-xs flex items-center justify-center border border-[#EF5F18]">
               2
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#10367D] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#261A66] tracking-tight">
               Upload Your Canva Banner
             </h2>
           </div>
-          <p className="text-sm text-[#10367D]/75 font-medium">
+          <p className="text-sm text-[#261A66]/75 font-medium">
             Drop the full banner you exported from Canva to slice it into pieces.
           </p>
         </div>
@@ -114,7 +114,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
           className="btn-white text-xs py-2 px-3.5 self-start sm:self-auto"
           title="Try slicing immediately with demo art"
         >
-          <Sparkles className="w-4 h-4 text-[#10367D] shrink-0" />
+          <Sparkles className="w-4 h-4 text-[#261A66] shrink-0" />
           <span className="hidden sm:inline">Load Demo Artwork (1-Click Test)</span>
           <span className="sm:hidden">Try Demo Art</span>
         </button>
@@ -128,10 +128,10 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
         onClick={() => fileInputRef.current?.click()}
         className={`p-8 sm:p-12 text-center rounded-3xl transition-all duration-300 cursor-pointer relative overflow-hidden ${
           isDragging
-            ? 'bg-[#EBEBEB]/50 border-2 border-dashed border-[#10367D] scale-[1.005]'
+            ? 'bg-[#E6E4EC]/50 border-2 border-dashed border-[#261A66] scale-[1.005]'
             : uploadedImage
-            ? 'bg-white border border-[#EBEBEB] shadow-xs'
-            : 'bg-gradient-to-b from-[#EBEBEB] to-white border-2 border-dashed border-[#EBEBEB] hover:border-[#10367D] hover:shadow-md'
+            ? 'bg-white border border-[#E6E4EC] shadow-xs'
+            : 'bg-gradient-to-b from-[#E6E4EC] to-white border-2 border-dashed border-[#E6E4EC] hover:border-[#261A66] hover:shadow-md'
         }`}
       >
         <input
@@ -144,15 +144,15 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
 
         {uploadedImage ? (
           <div className="flex flex-col items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#74B4DA] border border-[#74B4DA] flex items-center justify-center text-[#10367D] shadow-xs">
+            <div className="w-16 h-16 rounded-full bg-[#EF5F18] border border-[#EF5F18] flex items-center justify-center text-[#261A66] shadow-xs">
               <CheckCircle2 className="w-8 h-8 stroke-[2.2]" />
             </div>
 
             <div className="space-y-1">
-              <p className="font-extrabold text-lg text-[#10367D] truncate max-w-md">
+              <p className="font-extrabold text-lg text-[#261A66] truncate max-w-md">
                 {uploadedImage.name}
               </p>
-              <p className="text-xs font-number text-[#10367D]/75 font-medium">
+              <p className="text-xs font-number text-[#261A66]/75 font-medium">
                 Resolution: {uploadedImage.width} × {uploadedImage.height} px • {(uploadedImage.size / (1024 * 1024)).toFixed(2)} MB
               </p>
             </div>
@@ -160,12 +160,12 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
             {/* Aspect Ratio Validation Status */}
             <div className="flex items-center gap-2 pt-1">
               {ratioMatch ? (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#74B4DA] text-[#10367D] border border-[#74B4DA] text-xs font-bold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#10367D]" />
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EF5F18] text-[#261A66] border border-[#EF5F18] text-xs font-bold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#261A66]" />
                   <span>Aspect ratio matches ({format.name} • <span className="font-number">{rows}</span> rows)</span>
                 </div>
               ) : (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBEBEB] text-[#10367D] border border-[#EBEBEB] text-xs font-semibold">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E6E4EC] text-[#261A66] border border-[#E6E4EC] text-xs font-semibold">
                   <AlertTriangle className="w-3.5 h-3.5" />
                   <span>
                     Aspect mismatch (<span className="font-number">{(ratioDiffPercent * 100).toFixed(0)}%</span> diff). Will fit nicely.
@@ -184,22 +184,22 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
                 }}
                 className="btn-white text-xs py-2 px-4"
               >
-                <RefreshCw className="w-3.5 h-3.5 text-[#10367D]/75" />
+                <RefreshCw className="w-3.5 h-3.5 text-[#261A66]/75" />
                 <span>Replace Image</span>
               </button>
             </div>
           </div>
         ) : (
           <div className="space-y-4 max-w-md mx-auto">
-            <div className="w-16 h-16 rounded-full bg-[#EBEBEB] border border-[#EBEBEB] flex items-center justify-center text-[#10367D] mx-auto shadow-xs">
+            <div className="w-16 h-16 rounded-full bg-[#E6E4EC] border border-[#E6E4EC] flex items-center justify-center text-[#261A66] mx-auto shadow-xs">
               <UploadCloud className="w-8 h-8 stroke-[2]" />
             </div>
 
             <div className="space-y-1.5">
-              <p className="font-bold text-lg text-[#10367D] tracking-tight">
+              <p className="font-bold text-lg text-[#261A66] tracking-tight">
                 Drag and drop your Canva banner here
               </p>
-              <p className="text-xs text-[#10367D]/75 font-medium">
+              <p className="text-xs text-[#261A66]/75 font-medium">
                 Supports PNG, JPG, or WEBP up to 50MB (processed 100% locally in your browser)
               </p>
             </div>
@@ -214,9 +214,9 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
               </button>
             </div>
 
-            <div className="pt-3 border-t border-[#EBEBEB] text-xs text-[#10367D]/75 font-medium flex items-center justify-center gap-2">
+            <div className="pt-3 border-t border-[#E6E4EC] text-xs text-[#261A66]/75 font-medium flex items-center justify-center gap-2">
               <span>Expected size:</span>
-              <strong className="text-[#10367D] font-number font-bold">
+              <strong className="text-[#261A66] font-number font-bold">
                 {dims.width} × {dims.height} px
               </strong>
             </div>

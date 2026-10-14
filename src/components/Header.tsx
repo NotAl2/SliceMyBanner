@@ -14,52 +14,52 @@ export const Header: React.FC<HeaderProps> = ({
   hasUploadedImage,
 }) => {
   return (
-    <header className="w-full bg-[#EBEBEB]/90 backdrop-blur-md border-b border-[#EBEBEB] sticky top-0 z-40 transition-all">
+    <header className="w-full bg-[#F5F4F8]/90 backdrop-blur-md border-b border-[#E6E4EC] sticky top-0 z-40 transition-all">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
         {/* Brand / Logo */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EBEBEB] border border-[#EBEBEB] flex items-center justify-center p-1 sm:p-1.5 shadow-xs shrink-0 transition-transform hover:scale-105">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#F5F4F8] border border-[#E6E4EC] flex items-center justify-center p-1 sm:p-1.5 shadow-xs shrink-0 transition-transform hover:scale-105">
             <Logo variant="theme" className="w-full h-full object-contain" />
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-extrabold text-base sm:text-xl tracking-tight text-[#10367D]">
-              Slice<span className="text-[#74B4DA]">My</span>Banner
+            <span className="font-extrabold text-base sm:text-xl tracking-tight text-[#261A66]">
+              Slice<span className="text-[#EF5F18]">My</span>Banner
             </span>
-            <span className="hidden sm:inline-flex px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-[#74B4DA] text-[#10367D] font-bold border border-[#74B4DA] rounded-full">
+            <span className="hidden sm:inline-flex px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-[#EF5F18] text-white font-bold border border-[#EF5F18] rounded-full">
               IG Banner Slicer
             </span>
           </div>
         </div>
 
         {/* Center Nav Links */}
-        <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-[#10367D]/80">
+        <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-[#261A66]/80">
           <a
             href="#step-calculator"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#261A66] transition-colors"
           >
             Sizing Blueprint
           </a>
           <a
             href="#step-uploader"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#261A66] transition-colors"
           >
             Upload Banner
           </a>
           <a
             href="#canva-dimensions"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#261A66] transition-colors"
           >
             Dimensions
           </a>
           <a
             href="#faq"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#261A66] transition-colors"
           >
             FAQ
           </a>
           <button
             onClick={onOpenGuide}
-            className="hover:text-[#10367D] transition-colors cursor-pointer"
+            className="hover:text-[#261A66] transition-colors cursor-pointer"
           >
             Canva Guide
           </button>
@@ -74,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({
               className="btn-white text-xs py-1.5 px-2 sm:py-2 sm:px-3.5 flex items-center gap-1"
               title="Start over with a new banner"
             >
-              <RotateCcw className="w-3.5 h-3.5 text-[#10367D]/70" />
+              <RotateCcw className="w-3.5 h-3.5 text-[#261A66]/70" />
               <span className="hidden xs:inline text-xs">Reset</span>
             </button>
           )}

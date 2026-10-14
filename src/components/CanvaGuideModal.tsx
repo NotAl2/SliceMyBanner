@@ -30,38 +30,38 @@ export const CanvaGuideModal: React.FC<CanvaGuideModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#10367D]/60 backdrop-blur-xs animate-in fade-in duration-150">
-      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-[0_20px_60px_rgba(16,54,125,0.15)] border border-[#EBEBEB] relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#261A66]/60 backdrop-blur-xs animate-in fade-in duration-150">
+      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-[0_20px_60px_rgba(38, 26, 102,0.15)] border border-[#E6E4EC] relative">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full hover:bg-[#EBEBEB] text-[#10367D]/50 hover:text-[#10367D]/80 transition-colors cursor-pointer"
+          className="absolute top-6 right-6 p-2 rounded-full hover:bg-[#F5F4F8] text-[#261A66]/50 hover:text-[#261A66]/80 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3.5 mb-6">
-          <div className="w-12 h-12 rounded-full bg-[#74B4DA] border border-[#74B4DA] flex items-center justify-center text-[#10367D] shadow-xs">
+          <div className="w-12 h-12 rounded-full bg-[#EF5F18] border border-[#EF5F18] flex items-center justify-center text-[#261A66] shadow-xs">
             <Lightbulb className="w-6 h-6 stroke-[2]" />
           </div>
           <div>
-            <h3 className="text-2xl font-extrabold text-[#10367D] tracking-tight">
+            <h3 className="text-2xl font-extrabold text-[#261A66] tracking-tight">
               Canva Setup & Guide Blueprint
             </h3>
-            <p className="text-xs text-[#10367D]/75 font-medium">
+            <p className="text-xs text-[#261A66]/75 font-medium">
               How to configure rulers and safe zones inside Canva
             </p>
           </div>
         </div>
 
         {/* Dimensions Summary Bar */}
-        <div className="bg-[#EBEBEB] border border-[#EBEBEB] rounded-2xl p-5 mb-6 flex items-center justify-between flex-wrap gap-4 shadow-xs">
+        <div className="bg-[#F5F4F8] border border-[#E6E4EC] rounded-2xl p-5 mb-6 flex items-center justify-between flex-wrap gap-4 shadow-xs">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#10367D] block mb-0.5">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#261A66] block mb-0.5">
               Custom Canvas Size ({format.name} • <span className="font-number">{rows}</span> {rows === 1 ? 'Row' : 'Rows'})
             </span>
-            <span className="font-number text-2xl sm:text-3xl font-extrabold text-[#10367D]">
+            <span className="font-number text-2xl sm:text-3xl font-extrabold text-[#261A66]">
               {dims.width} × {dims.height} px
             </span>
           </div>
@@ -72,9 +72,9 @@ export const CanvaGuideModal: React.FC<CanvaGuideModalProps> = ({
               className="btn-white text-xs py-2 px-3.5"
             >
               {copiedKey === 'dims' ? (
-                <Check className="w-4 h-4 text-[#74B4DA]" />
+                <Check className="w-4 h-4 text-[#EF5F18]" />
               ) : (
-                <Copy className="w-4 h-4 text-[#10367D]/80" />
+                <Copy className="w-4 h-4 text-[#261A66]/80" />
               )}
               <span>Copy</span>
             </button>
@@ -93,60 +93,60 @@ export const CanvaGuideModal: React.FC<CanvaGuideModalProps> = ({
         </div>
 
         {/* Step-by-Step Instructions */}
-        <div className="space-y-5 text-sm text-[#10367D]">
+        <div className="space-y-5 text-sm text-[#261A66]">
           {/* Step 1 */}
           <div className="flex items-start gap-3.5">
-            <span className="w-7 h-7 rounded-full bg-[#74B4DA] border border-[#74B4DA] text-[#10367D] font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
+            <span className="w-7 h-7 rounded-full bg-[#EF5F18] border border-[#EF5F18] text-white font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
               1
             </span>
             <div>
-              <h4 className="font-bold text-base text-[#10367D] mb-1">
+              <h4 className="font-bold text-base text-[#261A66] mb-1">
                 Create Custom Canvas in Canva
               </h4>
-              <p className="text-xs text-[#10367D]/75 leading-relaxed font-medium">
+              <p className="text-xs text-[#261A66]/75 leading-relaxed font-medium">
                 In Canva, click <strong>Create a design</strong> &gt; <strong>Custom size</strong>. Set Width to{' '}
-                <strong className="text-[#10367D] font-number">{dims.width}</strong> and Height to{' '}
-                <strong className="text-[#10367D] font-number">{dims.height}</strong> (unit: <strong>px</strong>).
+                <strong className="text-[#261A66] font-number">{dims.width}</strong> and Height to{' '}
+                <strong className="text-[#261A66] font-number">{dims.height}</strong> (unit: <strong>px</strong>).
               </p>
             </div>
           </div>
 
           {/* Step 2 */}
           <div className="flex items-start gap-3.5">
-            <span className="w-7 h-7 rounded-full bg-[#74B4DA] border border-[#74B4DA] text-[#10367D] font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
+            <span className="w-7 h-7 rounded-full bg-[#EF5F18] border border-[#EF5F18] text-white font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
               2
             </span>
             <div>
-              <h4 className="font-bold text-base text-[#10367D] mb-1">
+              <h4 className="font-bold text-base text-[#261A66] mb-1">
                 Turn on Rulers and Guides
               </h4>
-              <p className="text-xs text-[#10367D]/75 leading-relaxed font-medium">
+              <p className="text-xs text-[#261A66]/75 leading-relaxed font-medium">
                 Go to <strong>File</strong> &gt; <strong>View settings</strong> &gt; check{' '}
-                <strong>Show rulers and guides</strong> (or press <kbd className="px-1.5 py-0.5 bg-[#EBEBEB]/50 border border-[#EBEBEB] rounded font-mono text-xs text-[#10367D]">Shift + R</kbd>).
+                <strong>Show rulers and guides</strong> (or press <kbd className="px-1.5 py-0.5 bg-[#F5F4F8]/50 border border-[#E6E4EC] rounded font-mono text-xs text-[#261A66]">Shift + R</kbd>).
               </p>
             </div>
           </div>
 
           {/* Step 3 */}
           <div className="flex items-start gap-3.5">
-            <span className="w-7 h-7 rounded-full bg-[#74B4DA] border border-[#74B4DA] text-[#10367D] font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
+            <span className="w-7 h-7 rounded-full bg-[#EF5F18] border border-[#EF5F18] text-white font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
               3
             </span>
             <div>
-              <h4 className="font-bold text-base text-[#10367D] mb-1">
+              <h4 className="font-bold text-base text-[#261A66] mb-1">
                 Add Slicing Columns and Rows
               </h4>
-              <p className="text-xs text-[#10367D]/75 leading-relaxed mb-2 font-medium">
+              <p className="text-xs text-[#261A66]/75 leading-relaxed mb-2 font-medium">
                 Go to <strong>File</strong> &gt; <strong>View settings</strong> &gt; <strong>Add guides</strong> &gt; choose <strong>Custom</strong>:
               </p>
-              <div className="bg-[#EBEBEB] border border-[#EBEBEB] rounded-xl p-3.5 grid grid-cols-2 gap-3 text-xs">
+              <div className="bg-[#F5F4F8] border border-[#E6E4EC] rounded-xl p-3.5 grid grid-cols-2 gap-3 text-xs">
                 <div>
-                  <span className="text-[#10367D]/70 block text-xs">Columns:</span>
-                  <span className="text-[#10367D] font-bold font-number text-sm">3 Columns</span> (Gap: 0 px)
+                  <span className="text-[#261A66]/70 block text-xs">Columns:</span>
+                  <span className="text-[#261A66] font-bold font-number text-sm">3 Columns</span> (Gap: 0 px)
                 </div>
                 <div>
-                  <span className="text-[#10367D]/70 block text-xs">Rows:</span>
-                  <span className="text-[#10367D] font-bold font-number text-sm">{rows} {rows === 1 ? 'Row' : 'Rows'}</span> (Gap: 0 px)
+                  <span className="text-[#261A66]/70 block text-xs">Rows:</span>
+                  <span className="text-[#261A66] font-bold font-number text-sm">{rows} {rows === 1 ? 'Row' : 'Rows'}</span> (Gap: 0 px)
                 </div>
               </div>
             </div>
@@ -154,29 +154,29 @@ export const CanvaGuideModal: React.FC<CanvaGuideModalProps> = ({
 
           {/* Special Crop Rules */}
           {(format.id === 'reel_cover' || format.id === 'portrait') && (
-            <div className="p-4 sm:p-5 bg-[#74B4DA]/25 border border-[#74B4DA] rounded-2xl">
-              <div className="flex items-center gap-2 text-[#10367D] font-bold mb-1.5">
+            <div className="p-4 sm:p-5 bg-[#EF5F18]/10 border border-[#EF5F18]/40 rounded-2xl">
+              <div className="flex items-center gap-2 text-[#261A66] font-bold mb-1.5">
                 <AlertCircle className="w-4 h-4 stroke-[2.2]" />
                 <span className="text-sm">Safe Zone Crop Guide for {format.name}</span>
               </div>
               {format.id === 'reel_cover' ? (
-                <div className="text-xs text-[#10367D] space-y-1.5 leading-relaxed font-medium">
+                <div className="text-xs text-[#261A66] space-y-1.5 leading-relaxed font-medium">
                   <p>
                     Reel covers display full <strong className="font-number">9:16 (1080×1920)</strong> in the Reels tab, but Instagram crops{' '}
-                    <strong className="font-number text-[#10367D]">420px from top</strong> and <strong className="font-number text-[#10367D]">420px from bottom</strong> on the profile grid.
+                    <strong className="font-number text-[#261A66]">420px from top</strong> and <strong className="font-number text-[#261A66]">420px from bottom</strong> on the profile grid.
                   </p>
-                  <p className="bg-white p-2.5 rounded-xl border border-[#EBEBEB] text-[#10367D] font-medium shadow-xs">
-                    📐 Horizontal Safe Guide Marks: drag ruler guides to <span className="font-number font-bold text-[#10367D]">420 px</span> and <span className="font-number font-bold text-[#10367D]">1500 px</span> vertically. Keep hero titles and faces between those lines!
+                  <p className="bg-white p-2.5 rounded-xl border border-[#E6E4EC] text-[#261A66] font-medium shadow-xs">
+                    📐 Horizontal Safe Guide Marks: drag ruler guides to <span className="font-number font-bold text-[#261A66]">420 px</span> and <span className="font-number font-bold text-[#261A66]">1500 px</span> vertically. Keep hero titles and faces between those lines!
                   </p>
                 </div>
               ) : (
-                <div className="text-xs text-[#10367D] space-y-1.5 leading-relaxed font-medium">
+                <div className="text-xs text-[#261A66] space-y-1.5 leading-relaxed font-medium">
                   <p>
                     Portrait feed posts are <strong className="font-number">4:5 (1080×1350)</strong>, but the profile grid crops{' '}
-                    <strong className="font-number text-[#10367D]">135px from top</strong> and <strong className="font-number text-[#10367D]">135px from bottom</strong>.
+                    <strong className="font-number text-[#261A66]">135px from top</strong> and <strong className="font-number text-[#261A66]">135px from bottom</strong>.
                   </p>
-                  <p className="bg-white p-2.5 rounded-xl border border-[#EBEBEB] text-[#10367D] font-medium shadow-xs">
-                    📐 Horizontal Safe Guide Marks: drag ruler guides to <span className="font-number font-bold text-[#10367D]">135 px</span> and <span className="font-number font-bold text-[#10367D]">1215 px</span> vertically.
+                  <p className="bg-white p-2.5 rounded-xl border border-[#E6E4EC] text-[#261A66] font-medium shadow-xs">
+                    📐 Horizontal Safe Guide Marks: drag ruler guides to <span className="font-number font-bold text-[#261A66]">135 px</span> and <span className="font-number font-bold text-[#261A66]">1215 px</span> vertically.
                   </p>
                 </div>
               )}
@@ -185,14 +185,14 @@ export const CanvaGuideModal: React.FC<CanvaGuideModalProps> = ({
 
           {/* Step 4 */}
           <div className="flex items-start gap-3.5">
-            <span className="w-7 h-7 rounded-full bg-[#74B4DA] border border-[#74B4DA] text-[#10367D] font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
+            <span className="w-7 h-7 rounded-full bg-[#EF5F18] border border-[#EF5F18] text-white font-bold font-number text-xs flex items-center justify-center shrink-0 mt-0.5">
               4
             </span>
             <div>
-              <h4 className="font-bold text-base text-[#10367D] mb-1">
+              <h4 className="font-bold text-base text-[#261A66] mb-1">
                 Download PNG & Drop Into SliceMyBanner
               </h4>
-              <p className="text-xs text-[#10367D]/75 leading-relaxed font-medium">
+              <p className="text-xs text-[#261A66]/75 leading-relaxed font-medium">
                 When your artwork is complete, export it as <strong>PNG</strong> from Canva, then drop the file into Step 2 to slice!
               </p>
             </div>
@@ -200,7 +200,7 @@ export const CanvaGuideModal: React.FC<CanvaGuideModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="mt-8 pt-4 border-t border-[#EBEBEB] flex justify-end">
+        <div className="mt-8 pt-4 border-t border-[#E6E4EC] flex justify-end">
           <button
             onClick={onClose}
             className="btn-dark text-xs py-2.5 px-6"

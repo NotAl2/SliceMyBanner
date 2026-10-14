@@ -71,14 +71,14 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2.5 mb-1">
-            <span className="w-7 h-7 rounded-full bg-[#74B4DA] text-[#10367D] font-bold font-number text-xs flex items-center justify-center border border-[#74B4DA]">
+            <span className="w-7 h-7 rounded-full bg-[#EF5F18] text-[#261A66] font-bold font-number text-xs flex items-center justify-center border border-[#EF5F18]">
               4
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#10367D] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#261A66] tracking-tight">
               Download Slices & Posting Guide
             </h2>
           </div>
-          <p className="text-sm text-[#10367D]/75 font-medium">
+          <p className="text-sm text-[#261A66]/75 font-medium">
             Everything is pre-numbered in reverse order so you can post without making a single mistake.
           </p>
         </div>
@@ -88,9 +88,9 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
           className="btn-white text-xs py-2 px-3.5 self-start sm:self-auto"
         >
           {copiedGuide ? (
-            <Check className="w-4 h-4 text-[#74B4DA]" />
+            <Check className="w-4 h-4 text-[#EF5F18]" />
           ) : (
-            <Copy className="w-4 h-4 text-[#10367D]/75" />
+            <Copy className="w-4 h-4 text-[#261A66]/75" />
           )}
           <span className="hidden sm:inline">Copy Posting Order</span>
           <span className="sm:hidden">Copy Order</span>
@@ -98,10 +98,10 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
       </div>
 
       {/* Main Download Big Banner Tile */}
-      <div className="bg-[#10367D] text-white rounded-3xl p-5 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 shadow-xl border border-[#EBEBEB]/30">
+      <div className="bg-[#261A66] text-white rounded-3xl p-5 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 shadow-xl border border-[#E6E4EC]/30">
         <div className="space-y-2 text-center sm:text-left">
-          <div className="inline-flex items-center gap-1.5 bg-[#74B4DA] text-[#10367D] px-3 py-1 rounded-full text-xs font-bold">
-            <Sparkles className="w-3.5 h-3.5 text-[#10367D]" />
+          <div className="inline-flex items-center gap-1.5 bg-[#EF5F18] text-white px-3 py-1 rounded-full text-xs font-bold">
+            <Sparkles className="w-3.5 h-3.5 text-white" />
             <span>Complete ZIP Bundle (<span className="font-number">{totalTiles}</span> Slices)</span>
           </div>
           <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight text-white">
@@ -109,7 +109,7 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
           </h3>
           <p className="text-xs sm:text-sm text-white/80 font-medium max-w-lg leading-relaxed">
             Slices are cleanly named like{' '}
-            <code className="bg-white/15 px-2 py-0.5 rounded-full font-number font-semibold text-xs text-[#74B4DA]">
+            <code className="bg-white/15 px-2 py-0.5 rounded-full font-number font-semibold text-xs text-[#EF5F18]">
               01_UPLOAD_FIRST_...
             </code>{' '}
             so you know exactly what order to post on Instagram!
@@ -119,16 +119,16 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
         <button
           onClick={handleDownloadZip}
           disabled={isZipping}
-          className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm bg-[#74B4DA] hover:bg-white text-[#10367D] shadow-lg hover:shadow-xl transition-all cursor-pointer disabled:opacity-50 shrink-0"
+          className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm bg-[#EF5F18] hover:bg-white text-white hover:text-[#261A66] shadow-lg hover:shadow-xl transition-all cursor-pointer disabled:opacity-50 shrink-0"
         >
           {isZipping ? (
             <>
-              <div className="w-4 h-4 border-2 border-[#10367D] border-t-transparent rounded-full animate-spin" />
+              <div className="w-4 h-4 border-2 border-[#261A66] border-t-transparent rounded-full animate-spin" />
               <span>Packaging ZIP...</span>
             </>
           ) : (
             <>
-              <FileArchive className="w-4 h-4 text-[#10367D]" />
+              <FileArchive className="w-4 h-4 text-[#261A66]" />
               <span>Download All as ZIP</span>
             </>
           )}
@@ -137,7 +137,7 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
 
       {/* Upload Order Checklist */}
       <div className="space-y-3 pt-2">
-        <h4 className="text-xs uppercase font-bold tracking-wider text-[#10367D]/75">
+        <h4 className="text-xs uppercase font-bold tracking-wider text-[#261A66]/75">
           Upload Order Checklist:
         </h4>
 
@@ -151,29 +151,29 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
                 key={slice.id}
                 className={`p-3.5 rounded-2xl border transition-all flex items-center justify-between text-xs ${
                   isFirst
-                    ? 'bg-[#74B4DA]/25 border-[#74B4DA] shadow-xs'
+                    ? 'bg-[#EF5F18]/25 border-[#EF5F18] shadow-xs'
                     : isLast
-                    ? 'bg-[#EBEBEB]/40 border-[#EBEBEB]'
-                    : 'bg-[#EBEBEB] border-[#EBEBEB] hover:bg-white hover:shadow-xs'
+                    ? 'bg-[#E6E4EC]/40 border-[#E6E4EC]'
+                    : 'bg-[#E6E4EC] border-[#E6E4EC] hover:bg-white hover:shadow-xs'
                 }`}
               >
                 <div className="flex items-center gap-3 truncate">
                   <span
                     className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-number font-bold shrink-0 ${
                       isFirst
-                        ? 'bg-[#74B4DA] text-[#10367D] border border-[#74B4DA]'
+                        ? 'bg-[#EF5F18] text-[#261A66] border border-[#EF5F18]'
                         : isLast
-                        ? 'bg-[#10367D] text-white'
-                        : 'bg-white text-[#10367D] border border-[#EBEBEB] shadow-2xs'
+                        ? 'bg-[#261A66] text-white'
+                        : 'bg-white text-[#261A66] border border-[#E6E4EC] shadow-2xs'
                     }`}
                   >
                     {slice.uploadOrder}
                   </span>
                   <div className="truncate">
-                    <p className="text-[#10367D] font-bold text-xs truncate">
+                    <p className="text-[#261A66] font-bold text-xs truncate">
                       {isFirst ? '1st: Post First' : isLast ? 'Last: Post Last' : `Post #${slice.uploadOrder}`}
                     </p>
-                    <p className="text-xs text-[#10367D]/70 font-medium font-number">
+                    <p className="text-xs text-[#261A66]/70 font-medium font-number">
                       Row {slice.row}, Col {slice.col}
                     </p>
                   </div>
@@ -184,7 +184,7 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
                     downloadBlob(slice.blob, slice.suggestedFilename);
                     onToast(`Downloaded ${slice.suggestedFilename}`);
                   }}
-                  className="p-2 rounded-full hover:bg-[#10367D] hover:text-white text-[#10367D]/80 transition-colors cursor-pointer"
+                  className="p-2 rounded-full hover:bg-[#261A66] hover:text-white text-[#261A66]/80 transition-colors cursor-pointer"
                   title="Download single slice"
                 >
                   <ArrowDownToLine className="w-4 h-4" />

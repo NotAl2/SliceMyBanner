@@ -60,16 +60,16 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
       {/* Slicer Controls Bar */}
       <div className="modern-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         {/* View Switcher Pills */}
-        <div className="flex items-center gap-1 bg-[#EBEBEB]/50 p-1 rounded-full border border-[#EBEBEB] self-start sm:self-auto">
+        <div className="flex items-center gap-1 bg-[#E6E4EC]/50 p-1 rounded-full border border-[#E6E4EC] self-start sm:self-auto">
           <button
             onClick={() => setActiveTab('grid')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
               activeTab === 'grid'
-                ? 'bg-[#10367D] text-white shadow-xs'
-                : 'text-[#10367D]/80 hover:text-[#10367D]'
+                ? 'bg-[#261A66] text-white shadow-xs'
+                : 'text-[#261A66]/80 hover:text-[#261A66]'
             }`}
           >
-            <Layers className={`w-3.5 h-3.5 shrink-0 ${activeTab === 'grid' ? 'text-[#74B4DA]' : 'text-[#10367D]'}`} />
+            <Layers className={`w-3.5 h-3.5 shrink-0 ${activeTab === 'grid' ? 'text-[#EF5F18]' : 'text-[#261A66]'}`} />
             <span>Grid (<span className="font-number">3 × {config.rows}</span>)</span>
           </button>
 
@@ -77,11 +77,11 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
             onClick={() => setActiveTab('upload_order')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
               activeTab === 'upload_order'
-                ? 'bg-[#10367D] text-white shadow-xs'
-                : 'text-[#10367D]/80 hover:text-[#10367D]'
+                ? 'bg-[#261A66] text-white shadow-xs'
+                : 'text-[#261A66]/80 hover:text-[#261A66]'
             }`}
           >
-            <ListOrdered className={`w-3.5 h-3.5 shrink-0 ${activeTab === 'upload_order' ? 'text-[#74B4DA]' : 'text-[#10367D]'}`} />
+            <ListOrdered className={`w-3.5 h-3.5 shrink-0 ${activeTab === 'upload_order' ? 'text-[#EF5F18]' : 'text-[#261A66]'}`} />
             <span>Order (<span className="font-number">1→{totalTiles}</span>)</span>
           </button>
         </div>
@@ -89,8 +89,8 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
         {/* Quirks & Safe Zone Toggles */}
         <div className="flex flex-wrap items-center gap-2">
           {/* Seam Gap Selector */}
-          <div className="flex items-center gap-1.5 bg-[#EBEBEB] px-3 py-1.5 rounded-full border border-[#EBEBEB]">
-            <span className="text-[#10367D]/75 font-semibold text-xs">Gap:</span>
+          <div className="flex items-center gap-1.5 bg-[#E6E4EC] px-3 py-1.5 rounded-full border border-[#E6E4EC]">
+            <span className="text-[#261A66]/75 font-semibold text-xs">Gap:</span>
             <div className="flex items-center gap-1">
               {[0, 1, 2, 3].map((gap) => (
                 <button
@@ -98,8 +98,8 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                   onClick={() => onUpdateConfig({ seamGap: gap })}
                   className={`w-6 h-6 rounded-full font-number text-xs font-bold transition-all cursor-pointer ${
                     config.seamGap === gap
-                      ? 'bg-[#10367D] text-white shadow-xs'
-                      : 'text-[#10367D]/80 hover:bg-[#EBEBEB]'
+                      ? 'bg-[#261A66] text-white shadow-xs'
+                      : 'text-[#261A66]/80 hover:bg-[#E6E4EC]'
                   }`}
                 >
                   {gap}
@@ -114,11 +114,11 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
               onClick={() => onUpdateConfig({ showSafeZone: !config.showSafeZone })}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer border ${
                 config.showSafeZone
-                  ? 'bg-[#74B4DA] text-[#10367D] border-[#74B4DA]'
-                  : 'bg-white text-[#10367D]/80 border-[#EBEBEB] hover:bg-[#EBEBEB]'
+                  ? 'bg-[#EF5F18] text-[#261A66] border-[#EF5F18]'
+                  : 'bg-white text-[#261A66]/80 border-[#E6E4EC] hover:bg-[#E6E4EC]'
               }`}
             >
-              <Shield className="w-3.5 h-3.5 text-[#10367D]" />
+              <Shield className="w-3.5 h-3.5 text-[#261A66]" />
               <span>Safe Crop</span>
             </button>
           )}
@@ -128,11 +128,11 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
             onClick={() => onUpdateConfig({ showPostingOrder: !config.showPostingOrder })}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer border ${
               config.showPostingOrder
-                ? 'bg-[#74B4DA] text-[#10367D] border-[#74B4DA]'
-                : 'bg-white text-[#10367D]/80 border-[#EBEBEB] hover:bg-[#EBEBEB]'
+                ? 'bg-[#EF5F18] text-[#261A66] border-[#EF5F18]'
+                : 'bg-white text-[#261A66]/80 border-[#E6E4EC] hover:bg-[#E6E4EC]'
             }`}
           >
-            <Pin className="w-3.5 h-3.5 text-[#10367D]" />
+            <Pin className="w-3.5 h-3.5 text-[#261A66]" />
             <span>Post Order</span>
           </button>
         </div>
@@ -141,15 +141,15 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
       {/* Grid Mode View */}
       {activeTab === 'grid' && (
         <div className="modern-card p-6 sm:p-8 space-y-4">
-          <div className="flex items-center justify-between text-xs font-semibold text-[#10367D]/75 flex-wrap gap-2">
-            <span className="flex items-center gap-2 text-[#10367D]">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#10367D]" />
+          <div className="flex items-center justify-between text-xs font-semibold text-[#261A66]/75 flex-wrap gap-2">
+            <span className="flex items-center gap-2 text-[#261A66]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#261A66]" />
               <span>
                 <strong className="font-number font-bold">{totalTiles}</strong> Slices Generated (
                 <span className="font-number">{slices[0]?.width} × {slices[0]?.height}</span> px each)
               </span>
             </span>
-            <span className="text-[#10367D]/70 font-medium">
+            <span className="text-[#261A66]/70 font-medium">
               Hover any slice to preview or download
             </span>
           </div>
@@ -171,7 +171,7 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                 <div
                   key={slice.id}
                   onClick={() => onSliceClick && onSliceClick(slice)}
-                  className="slice-tile group relative rounded-2xl overflow-hidden border border-[#EBEBEB] bg-white cursor-pointer shadow-xs hover:shadow-md transition-all duration-200"
+                  className="slice-tile group relative rounded-2xl overflow-hidden border border-[#E6E4EC] bg-white cursor-pointer shadow-xs hover:shadow-md transition-all duration-200"
                   style={{
                     aspectRatio: isReel ? '9 / 16' : isPortrait ? '4 / 5' : '1 / 1',
                   }}
@@ -189,18 +189,18 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                       {isReel && (
                         <>
                           <div
-                            className="w-full bg-[#10367D]/40 border-b border-white/30 text-xs font-number font-medium text-white flex items-center justify-center"
+                            className="w-full bg-[#261A66]/40 border-b border-white/30 text-xs font-number font-medium text-white flex items-center justify-center"
                             style={{ height: '21.875%' }}
                           >
                             <span>Cropped 420px</span>
                           </div>
-                          <div className="w-full flex-1 border-2 border-dashed border-[#10367D] bg-[#10367D]/15 relative flex items-center justify-center">
-                            <span className="text-xs font-bold text-[#10367D] bg-[#74B4DA] border border-[#74B4DA] px-2 py-0.5 rounded-full shadow-xs">
+                          <div className="w-full flex-1 border-2 border-dashed border-[#261A66] bg-[#261A66]/15 relative flex items-center justify-center">
+                            <span className="text-xs font-bold text-[#261A66] bg-[#EF5F18] border border-[#EF5F18] px-2 py-0.5 rounded-full shadow-xs">
                               1:1 Safe Zone
                             </span>
                           </div>
                           <div
-                            className="w-full bg-[#10367D]/40 border-t border-white/30 text-xs font-number font-medium text-white flex items-center justify-center"
+                            className="w-full bg-[#261A66]/40 border-t border-white/30 text-xs font-number font-medium text-white flex items-center justify-center"
                             style={{ height: '21.875%' }}
                           >
                             <span>Cropped 420px</span>
@@ -210,18 +210,18 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                       {isPortrait && (
                         <>
                           <div
-                            className="w-full bg-[#10367D]/40 border-b border-white/30 text-xs font-medium text-white flex items-center justify-center"
+                            className="w-full bg-[#261A66]/40 border-b border-white/30 text-xs font-medium text-white flex items-center justify-center"
                             style={{ height: '10%' }}
                           >
                             <span>Cropped</span>
                           </div>
-                          <div className="w-full flex-1 border-2 border-dashed border-[#10367D] bg-[#10367D]/15 relative flex items-center justify-center">
-                            <span className="text-xs font-bold text-[#10367D] bg-[#74B4DA] border border-[#74B4DA] px-2 py-0.5 rounded-full shadow-xs">
+                          <div className="w-full flex-1 border-2 border-dashed border-[#261A66] bg-[#261A66]/15 relative flex items-center justify-center">
+                            <span className="text-xs font-bold text-[#261A66] bg-[#EF5F18] border border-[#EF5F18] px-2 py-0.5 rounded-full shadow-xs">
                               1:1 Safe
                             </span>
                           </div>
                           <div
-                            className="w-full bg-[#10367D]/40 border-t border-white/30 text-xs font-medium text-white flex items-center justify-center"
+                            className="w-full bg-[#261A66]/40 border-t border-white/30 text-xs font-medium text-white flex items-center justify-center"
                             style={{ height: '10%' }}
                           >
                             <span>Cropped</span>
@@ -237,10 +237,10 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                       <span
                         className={`text-xs font-semibold px-2.5 py-0.5 rounded-full shadow-xs ${
                           isFirstUpload
-                            ? 'bg-[#74B4DA] text-[#10367D] border border-[#74B4DA] font-number font-bold'
+                            ? 'bg-[#EF5F18] text-[#261A66] border border-[#EF5F18] font-number font-bold'
                             : isLastUpload
-                            ? 'bg-[#10367D] text-white font-number'
-                            : 'bg-white text-[#10367D] border border-[#EBEBEB] font-number'
+                            ? 'bg-[#261A66] text-white font-number'
+                            : 'bg-white text-[#261A66] border border-[#E6E4EC] font-number'
                         }`}
                       >
                         {isFirstUpload
@@ -251,7 +251,7 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                       </span>
 
                       {isPinned && (
-                        <span className="text-xs font-bold bg-[#74B4DA] text-[#10367D] border border-[#74B4DA] px-2 py-0.5 rounded-full flex items-center gap-1">
+                        <span className="text-xs font-bold bg-[#EF5F18] text-[#261A66] border border-[#EF5F18] px-2 py-0.5 rounded-full flex items-center gap-1">
                           <Pin className="w-2.5 h-2.5" /> Pinned
                         </span>
                       )}
@@ -259,23 +259,23 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                   )}
 
                   {/* Tile Coordinate (Bottom Right) */}
-                  <div className="absolute bottom-2 right-2 text-xs font-number font-semibold bg-white/95 text-[#10367D] px-2 py-0.5 rounded-md border border-[#EBEBEB] pointer-events-none shadow-xs">
+                  <div className="absolute bottom-2 right-2 text-xs font-number font-semibold bg-white/95 text-[#261A66] px-2 py-0.5 rounded-md border border-[#E6E4EC] pointer-events-none shadow-xs">
                     R{slice.row}:C{slice.col}
                   </div>
 
                   {/* Hover Overlay with Quick Actions */}
-                  <div className="absolute inset-0 bg-[#10367D]/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-3 text-center">
+                  <div className="absolute inset-0 bg-[#261A66]/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-3 text-center">
                     <span className="text-xs font-semibold text-white font-number">
                       Step #{slice.uploadOrder}
                     </span>
-                    <span className="text-xs text-[#74B4DA] font-number font-semibold">
+                    <span className="text-xs text-[#EF5F18] font-number font-semibold">
                       {slice.width} × {slice.height} px
                     </span>
 
                     <div className="flex items-center gap-2 mt-1">
                       <button
                         onClick={(e) => handleDownloadSlice(slice, e)}
-                        className="w-9 h-9 rounded-full bg-white hover:bg-[#10367D] hover:text-white text-[#10367D] shadow-md flex items-center justify-center transition-all cursor-pointer"
+                        className="w-9 h-9 rounded-full bg-white hover:bg-[#261A66] hover:text-white text-[#261A66] shadow-md flex items-center justify-center transition-all cursor-pointer"
                         title="Download this slice"
                       >
                         <Download className="w-4 h-4" />
@@ -283,11 +283,11 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
 
                       <button
                         onClick={(e) => handleCopySlice(slice, e)}
-                        className="w-9 h-9 rounded-full bg-white hover:bg-[#10367D] hover:text-white text-[#10367D] shadow-md flex items-center justify-center transition-all cursor-pointer"
+                        className="w-9 h-9 rounded-full bg-white hover:bg-[#261A66] hover:text-white text-[#261A66] shadow-md flex items-center justify-center transition-all cursor-pointer"
                         title="Copy image to clipboard"
                       >
                         {copiedId === slice.id ? (
-                          <Check className="w-4 h-4 text-[#74B4DA]" />
+                          <Check className="w-4 h-4 text-[#EF5F18]" />
                         ) : (
                           <Copy className="w-4 h-4" />
                         )}
@@ -306,14 +306,14 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
         <div className="modern-card p-6 sm:p-8 space-y-4">
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div>
-              <h3 className="font-extrabold text-lg text-[#10367D] tracking-tight">
+              <h3 className="font-extrabold text-lg text-[#261A66] tracking-tight">
                 Instagram Upload Sequence
               </h3>
-              <p className="text-sm text-[#10367D]/75 font-medium">
+              <p className="text-sm text-[#261A66]/75 font-medium">
                 Post in this exact sequence to ensure your banner displays properly on your profile grid.
               </p>
             </div>
-            <span className="text-xs font-bold text-[#10367D] bg-[#74B4DA] border border-[#74B4DA] px-3 py-1 rounded-full font-number">
+            <span className="text-xs font-bold text-[#261A66] bg-[#EF5F18] border border-[#EF5F18] px-3 py-1 rounded-full font-number">
               {totalTiles} Slices Total
             </span>
           </div>
@@ -328,31 +328,31 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                   key={slice.id}
                   className={`p-3 rounded-2xl border transition-all ${
                     isFirst
-                      ? 'bg-[#74B4DA]/30 border-[#74B4DA] shadow-xs'
+                      ? 'bg-[#EF5F18]/30 border-[#EF5F18] shadow-xs'
                       : isLast
-                      ? 'bg-[#EBEBEB]/40 border-[#EBEBEB]'
-                      : 'bg-white border-[#EBEBEB] shadow-xs'
+                      ? 'bg-[#E6E4EC]/40 border-[#E6E4EC]'
+                      : 'bg-white border-[#E6E4EC] shadow-xs'
                   }`}
                 >
                   <div className="flex items-center justify-between text-xs font-semibold mb-2">
                     <span
                       className={`text-xs font-bold font-number ${
                         isFirst
-                          ? 'text-[#10367D] font-extrabold'
+                          ? 'text-[#261A66] font-extrabold'
                           : isLast
-                          ? 'text-[#10367D]'
-                          : 'text-[#10367D]/80'
+                          ? 'text-[#261A66]'
+                          : 'text-[#261A66]/80'
                       }`}
                     >
                       Step {slice.uploadOrder}
                     </span>
-                    <span className="text-xs text-[#10367D]/70 font-number">
+                    <span className="text-xs text-[#261A66]/70 font-number">
                       R{slice.row}:C{slice.col}
                     </span>
                   </div>
 
                   <div
-                    className="relative rounded-xl overflow-hidden border border-[#EBEBEB] bg-white"
+                    className="relative rounded-xl overflow-hidden border border-[#E6E4EC] bg-white"
                     style={{
                       aspectRatio: isReel ? '9 / 16' : isPortrait ? '4 / 5' : '1 / 1',
                     }}
@@ -365,12 +365,12 @@ export const SlicerPreview: React.FC<SlicerPreviewProps> = ({
                   </div>
 
                   <div className="flex items-center justify-between pt-2">
-                    <span className="text-xs text-[#10367D]/80 font-medium truncate font-number">
+                    <span className="text-xs text-[#261A66]/80 font-medium truncate font-number">
                       {isFirst ? 'Post 1st' : isLast ? 'Post Last' : `Post #${slice.uploadOrder}`}
                     </span>
                     <button
                       onClick={(e) => handleDownloadSlice(slice, e)}
-                      className="p-1.5 rounded-full hover:bg-[#EBEBEB] text-[#10367D]/75 transition-colors cursor-pointer"
+                      className="p-1.5 rounded-full hover:bg-[#E6E4EC] text-[#261A66]/75 transition-colors cursor-pointer"
                       title="Download slice"
                     >
                       <Download className="w-3.5 h-3.5" />
