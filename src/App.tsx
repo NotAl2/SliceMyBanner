@@ -522,10 +522,10 @@ export function App() {
             <span className="hidden md:inline text-[#261A66]/70">— The simple Canva Instagram grid & reel slicer</span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-semibold text-[#261A66]/80">
+          <div className="flex items-center gap-4 text-xs font-bold text-[#261A66]">
             <button
               onClick={() => setIsGuideOpen(true)}
-              className="hover:text-[#261A66] transition-colors cursor-pointer"
+              className="hover:text-[#EF5F18] transition-colors cursor-pointer"
             >
               Canva Sizing Guide
             </button>

@@ -32,34 +32,34 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center Nav Links */}
-        <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-[#261A66]/80">
+        <nav className="hidden md:flex items-center gap-7 text-xs sm:text-sm font-bold text-[#261A66]">
           <a
             href="#step-calculator"
-            className="hover:text-[#261A66] transition-colors"
+            className="hover:text-[#EF5F18] transition-colors"
           >
             Sizing Blueprint
           </a>
           <a
             href="#step-uploader"
-            className="hover:text-[#261A66] transition-colors"
+            className="hover:text-[#EF5F18] transition-colors"
           >
             Upload Banner
           </a>
           <a
             href="#canva-dimensions"
-            className="hover:text-[#261A66] transition-colors"
+            className="hover:text-[#EF5F18] transition-colors"
           >
             Dimensions
           </a>
           <a
             href="#faq"
-            className="hover:text-[#261A66] transition-colors"
+            className="hover:text-[#EF5F18] transition-colors"
           >
             FAQ
           </a>
           <button
             onClick={onOpenGuide}
-            className="hover:text-[#261A66] transition-colors cursor-pointer"
+            className="hover:text-[#EF5F18] transition-colors cursor-pointer"
           >
             Canva Guide
           </button>
