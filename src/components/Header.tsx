@@ -1,15 +1,17 @@
 import React from 'react';
-import { BookOpen, RotateCcw } from 'lucide-react';
+import { BookOpen, RotateCcw, Coffee } from 'lucide-react';
 import { Logo } from './Logo';
 
 interface HeaderProps {
   onOpenGuide: () => void;
+  onOpenDonate: () => void;
   onReset: () => void;
   hasUploadedImage: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   onOpenGuide,
+  onOpenDonate,
   onReset,
   hasUploadedImage,
 }) => {
@@ -57,6 +59,13 @@ export const Header: React.FC<HeaderProps> = ({
           >
             FAQ
           </a>
+          <button
+            onClick={onOpenDonate}
+            className="whitespace-nowrap hover:text-[#EF5F18] transition-colors cursor-pointer flex items-center gap-1 text-[#EF5F18]"
+          >
+            <Coffee className="w-3.5 h-3.5" />
+            <span>Support</span>
+          </button>
         </nav>
 
         {/* Quick Actions (matching pill buttons in reference) */}
@@ -74,11 +83,22 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={onOpenGuide}
-            className="btn-dark text-xs py-2 px-3.5 sm:px-4 flex items-center gap-1.5 whitespace-nowrap"
+            className="btn-dark text-xs py-2 px-3 sm:px-3.5 flex items-center gap-1.5 whitespace-nowrap"
             title="Open Canva Sizing Guide"
           >
             <BookOpen className="w-3.5 h-3.5 shrink-0" />
-            <span>Canva Guide</span>
+            <span className="hidden sm:inline">Canva Guide</span>
+            <span className="sm:hidden">Guide</span>
+          </button>
+
+          <button
+            onClick={onOpenDonate}
+            className="btn-primary text-xs py-2 px-3 sm:px-3.5 flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
+            title="Buy me a coffee"
+          >
+            <Coffee className="w-3.5 h-3.5 shrink-0" />
+            <span className="hidden sm:inline">Buy Me a Coffee</span>
+            <span className="sm:hidden">Donate</span>
           </button>
         </div>
       </div>

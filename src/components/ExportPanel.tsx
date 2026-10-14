@@ -5,6 +5,7 @@ import {
   Copy,
   ArrowDownToLine,
   Sparkles,
+  Coffee,
 } from 'lucide-react';
 import type { GridConfig, SliceItem } from '../types';
 import { generateZipArchive, downloadBlob } from '../utils/zipExporter';
@@ -14,12 +15,16 @@ interface ExportPanelProps {
   slices: SliceItem[];
   config: GridConfig;
   onToast: (msg: string) => void;
+  onOpenDonate?: () => void;
+  onDownloadDone?: () => void;
 }
 
 export const ExportPanel: React.FC<ExportPanelProps> = ({
   slices,
   config,
   onToast,
+  onOpenDonate,
+  onDownloadDone,
 }) => {
   const [isZipping, setIsZipping] = useState(false);
   const [copiedGuide, setCopiedGuide] = useState(false);
@@ -37,6 +42,9 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
       downloadBlob(zipBlob, filename);
       triggerConfetti();
       onToast(`Downloaded ${filename}!`);
+      if (onDownloadDone) {
+        onDownloadDone();
+      }
     } catch (err) {
       console.error('ZIP generation error:', err);
       onToast('Failed to create ZIP. Try downloading tiles individually.');
@@ -135,6 +143,33 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
         </button>
       </div>
 
+      {/* Buy Me a Coffee Support Banner */}
+      {onOpenDonate && (
+        <div className="bg-[#EF5F18]/10 border border-[#EF5F18]/30 rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5 text-center sm:text-left">
+            <div className="w-11 h-11 rounded-full bg-[#EF5F18] flex items-center justify-center text-white shrink-0 shadow-xs mx-auto sm:mx-0">
+              <Coffee className="w-5 h-5 stroke-[2.2]" />
+            </div>
+            <div>
+              <h4 className="font-extrabold text-sm sm:text-base text-[#261A66]">
+                Did SliceMyBanner save you time?
+              </h4>
+              <p className="text-xs text-[#261A66]/75 font-medium">
+                Keep it 100% free and ad-free by chipping in for a coffee ($2, $5, $10, or $15)!
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={onOpenDonate}
+            className="btn-primary text-xs py-2.5 px-5 flex items-center gap-1.5 whitespace-nowrap cursor-pointer shadow-sm hover:shadow-md transition-all shrink-0"
+          >
+            <Coffee className="w-3.5 h-3.5" />
+            <span>Buy Me a Coffee ($2 - $15)</span>
+          </button>
+        </div>
+      )}
+
       {/* Upload Order Checklist */}
       <div className="space-y-3 pt-2">
         <h4 className="text-xs uppercase font-bold tracking-wider text-[#261A66]/75">
@@ -183,6 +218,9 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({
                   onClick={() => {
                     downloadBlob(slice.blob, slice.suggestedFilename);
                     onToast(`Downloaded ${slice.suggestedFilename}`);
+                    if (onDownloadDone) {
+                      onDownloadDone();
+                    }
                   }}
                   className="p-2 rounded-full hover:bg-[#261A66] hover:text-white text-[#261A66]/80 transition-colors cursor-pointer"
                   title="Download single slice"

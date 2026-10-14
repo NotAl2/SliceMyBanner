@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { GridConfigurator } from './components/GridConfigurator';
 import { CanvaGuideModal } from './components/CanvaGuideModal';
+import { DonateModal } from './components/DonateModal';
 import { ImageUploader } from './components/ImageUploader';
 import { SlicerPreview } from './components/SlicerPreview';
 import { InstagramSimulator } from './components/InstagramSimulator';
@@ -19,7 +20,7 @@ import {
   animateSlicesIn,
   triggerConfetti,
 } from './utils/animations';
-import { ArrowRight, Play, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2, Coffee } from 'lucide-react';
 
 export function App() {
   const [format, setFormat] = useState<GridFormat>(GRID_FORMATS.square);
@@ -39,6 +40,9 @@ export function App() {
   const [slices, setSlices] = useState<SliceItem[]>([]);
   const [isSlicing, setIsSlicing] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
+  const [isDonateOpen, setIsDonateOpen] = useState<boolean>(false);
+  const [isImageDonePopup, setIsImageDonePopup] = useState<boolean>(false);
+  const [hasShownDonateAfterSlice, setHasShownDonateAfterSlice] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Initialize smooth momentum scrolling & scroll-triggered entrance animations
@@ -74,7 +78,7 @@ export function App() {
     setToastMessage(msg);
   };
 
-  const handleSliceImage = async (img: HTMLImageElement) => {
+  const handleSliceImage = async (img: HTMLImageElement, isInitialUpload = false) => {
     try {
       setIsSlicing(true);
       const newSlices = await sliceBannerImage(img, {
@@ -88,6 +92,15 @@ export function App() {
         animateSlicesIn('#slices-container');
         smoothScrollTo('#slices-container', -60);
       }, 100);
+
+      // Trigger Buy Me a Coffee popup after image is done slicing (if not shown yet in this session)
+      if (isInitialUpload && !hasShownDonateAfterSlice) {
+        setHasShownDonateAfterSlice(true);
+        setTimeout(() => {
+          setIsImageDonePopup(true);
+          setIsDonateOpen(true);
+        }, 1300);
+      }
     } catch (err) {
       console.error('Slicing error:', err);
       showToast('Error slicing image. Please check image format.');
@@ -99,7 +112,7 @@ export function App() {
   const handleImageSelected = (info: UploadedImageInfo, img: HTMLImageElement) => {
     setUploadedImage(info);
     setImgElement(img);
-    handleSliceImage(img);
+    handleSliceImage(img, true);
     showToast(`Loaded ${info.name}!`);
   };
 
@@ -116,7 +129,7 @@ export function App() {
       dataUrl: demo.dataUrl,
     });
     setImgElement(demo.imgElement);
-    await handleSliceImage(demo.imgElement);
+    await handleSliceImage(demo.imgElement, true);
     triggerConfetti();
     showToast('Demo artwork loaded and sliced!');
   };
@@ -134,6 +147,10 @@ export function App() {
       {/* Header */}
       <Header
         onOpenGuide={() => setIsGuideOpen(true)}
+        onOpenDonate={() => {
+          setIsImageDonePopup(false);
+          setIsDonateOpen(true);
+        }}
         onReset={handleReset}
         hasUploadedImage={!!uploadedImage}
       />
@@ -309,6 +326,16 @@ export function App() {
                 slices={slices}
                 config={config}
                 onToast={showToast}
+                onOpenDonate={() => {
+                  setIsImageDonePopup(false);
+                  setIsDonateOpen(true);
+                }}
+                onDownloadDone={() => {
+                  setTimeout(() => {
+                    setIsImageDonePopup(true);
+                    setIsDonateOpen(true);
+                  }, 600);
+                }}
               />
             </section>
           </div>
@@ -530,6 +557,17 @@ export function App() {
               Canva Sizing Guide
             </button>
             <span>•</span>
+            <button
+              onClick={() => {
+                setIsImageDonePopup(false);
+                setIsDonateOpen(true);
+              }}
+              className="hover:text-[#EF5F18] transition-colors cursor-pointer flex items-center gap-1 text-[#EF5F18]"
+            >
+              <Coffee className="w-3.5 h-3.5" />
+              <span>Buy Me a Coffee</span>
+            </button>
+            <span>•</span>
             <span className="text-[#261A66] font-number font-semibold">100% Free & Private</span>
           </div>
         </div>
@@ -542,6 +580,17 @@ export function App() {
         format={format}
         rows={rows}
         onCopyText={(text, label) => showToast(`Copied ${label} (${text})!`)}
+      />
+
+      {/* Buy Me a Coffee Donate Modal */}
+      <DonateModal
+        isOpen={isDonateOpen}
+        onClose={() => setIsDonateOpen(false)}
+        isImageDone={isImageDonePopup}
+        onDonated={() => {
+          showToast('Thank you so much for your support! ☕💖');
+          setIsDonateOpen(false);
+        }}
       />
 
       {/* Floating Toast Notification */}
