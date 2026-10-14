@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-number: 'Nunito', 'Quicksand', system-ui, sans-serif;
+  --font-mono: 'Nunito', monospace;
+
+  --color-canvas: #FBFBF8;
+  --color-mist: #DBE3E9;
+  --color-cornflower: #6AA6DA;
+  --color-pear: #E1E5AC;
+  --color-black: #000000;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #FBFBF8;
+}
+
+body {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  background-color: #FBFBF8;
+  color: #000000;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Soft, elegant typography for numbers */
+.font-number {
+  font-family: var(--font-number, 'Nunito', sans-serif);
+  font-variant-numeric: tabular-nums proportional-nums;
+  letter-spacing: -0.015em;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FBFBF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #DBE3E9;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6AA6DA;
+}
+
+/* Modern Card Styles */
+.modern-card {
+  background: #ffffff;
+  border: 1px solid #DBE3E9;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-card-hover {
+  background: #ffffff;
+  border: 1px solid #DBE3E9;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.modern-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -4px rgba(106, 166, 218, 0.16), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  border-color: #6AA6DA;
+}
+
+/* Modern Pill Button Utilities */
+.btn-primary {
+  background-color: #6AA6DA;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px -3px rgba(106, 166, 218, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #5594cb;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -3px rgba(106, 166, 218, 0.45);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-dark {
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.65rem 1.35rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-dark:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+.btn-dark:active {
+  transform: translateY(0);
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #DBE3E9;
+  border-radius: 9999px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-white:hover {
+  background-color: #FBFBF8;
+  border-color: #6AA6DA;
+  color: #000000;
+}
+
+.btn-pear {
+  background-color: #E1E5AC;
+  color: #000000;
+  border-radius: 9999px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(225, 229, 172, 0.35);
+}
+.btn-pear:hover {
+  background-color: #d6db9b;
+  transform: translateY(-1px);
+}
+
+.btn-mist {
+  background-color: #DBE3E9;
+  color: #000000;
+  border-radius: 9999px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-mist:hover {
+  background-color: #ccd6dd;
+}
+
+/* Studio Hero styling: Canvas, Mist, with subtle Cornflower & Pear tint */
+.hero-gradient-card {
+  background: linear-gradient(135deg, #f7f9fa 0%, #edf2f6 55%, #FBFBF8 100%);
+  border: 1px solid #DBE3E9;
+  border-radius: 2.25rem;
+}
