@@ -16,15 +16,15 @@ export function generateDemoBanner(
     const w = dims.width;
     const h = dims.height;
 
-    // Studio gradient background: Canvas + Mist + subtle Cornflower & Pear tint
+    // Studio gradient background: Canvas + Mist
     const bgGradient = ctx.createLinearGradient(0, 0, w, h);
-    bgGradient.addColorStop(0, '#DBE3E9'); // Mist
-    bgGradient.addColorStop(0.5, '#FBFBF8'); // Canvas
-    bgGradient.addColorStop(1, '#eaf0f5');
+    bgGradient.addColorStop(0, '#FFFFFF');
+    bgGradient.addColorStop(0.5, '#EBEBEB');
+    bgGradient.addColorStop(1, '#EBEBEB');
     ctx.fillStyle = bgGradient;
     ctx.fillRect(0, 0, w, h);
 
-    // Large sweeping continuous Cornflower curve across all 3 columns
+    // Large sweeping continuous Sky Blue curve across all 3 columns
     ctx.save();
     ctx.beginPath();
     ctx.moveTo(0, h * 0.65);
@@ -33,13 +33,13 @@ export function generateDemoBanner(
     ctx.lineTo(0, h);
     ctx.closePath();
     const waveGrad1 = ctx.createLinearGradient(0, h * 0.3, w, h);
-    waveGrad1.addColorStop(0, 'rgba(106, 166, 218, 0.35)'); // Cornflower
-    waveGrad1.addColorStop(1, 'rgba(106, 166, 218, 0.65)');
+    waveGrad1.addColorStop(0, 'rgba(116, 180, 218, 0.35)'); // #74B4DA
+    waveGrad1.addColorStop(1, 'rgba(116, 180, 218, 0.65)');
     ctx.fillStyle = waveGrad1;
     ctx.fill();
     ctx.restore();
 
-    // Secondary subtle Pear wave
+    // Secondary subtle Navy curve
     ctx.save();
     ctx.beginPath();
     ctx.moveTo(0, h * 0.8);
@@ -48,13 +48,13 @@ export function generateDemoBanner(
     ctx.lineTo(0, h);
     ctx.closePath();
     const waveGrad2 = ctx.createLinearGradient(0, h * 0.5, w, h);
-    waveGrad2.addColorStop(0, 'rgba(225, 229, 172, 0.45)'); // Pear
-    waveGrad2.addColorStop(1, 'rgba(106, 166, 218, 0.5)');
+    waveGrad2.addColorStop(0, 'rgba(16, 54, 125, 0.2)'); // #10367D
+    waveGrad2.addColorStop(1, 'rgba(116, 180, 218, 0.4)');
     ctx.fillStyle = waveGrad2;
     ctx.fill();
     ctx.restore();
 
-    // Large floating sun / horizon orb in Pear / Canvas
+    // Large floating sun / horizon orb in Sky Blue / Soft Gray
     ctx.save();
     ctx.beginPath();
     ctx.arc(dims.tileWidth * 1.5, h * 0.45, Math.min(dims.tileWidth * 0.7, h * 0.4), 0, Math.PI * 2);
@@ -66,9 +66,9 @@ export function generateDemoBanner(
       h * 0.45,
       Math.min(dims.tileWidth * 0.7, h * 0.4)
     );
-    sunGrad.addColorStop(0, 'rgba(225, 229, 172, 0.8)'); // Pear
-    sunGrad.addColorStop(0.6, 'rgba(251, 251, 248, 0.5)'); // Canvas
-    sunGrad.addColorStop(1, 'rgba(251, 251, 248, 0)');
+    sunGrad.addColorStop(0, 'rgba(116, 180, 218, 0.6)'); // #74B4DA
+    sunGrad.addColorStop(0.6, 'rgba(235, 235, 235, 0.4)');
+    sunGrad.addColorStop(1, 'rgba(235, 235, 235, 0)');
     ctx.fillStyle = sunGrad;
     ctx.fill();
     ctx.restore();
@@ -90,31 +90,31 @@ export function generateDemoBanner(
         );
 
         // Column indicator pill
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#10367D';
         ctx.font = '700 30px "Outfit", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(`TILE ${c + (r - 1) * 3} OF ${dims.totalTiles}`, cx, cy - 80);
 
         // Big Modern geometric headline across the tiles
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#10367D';
         ctx.font = '800 80px "Outfit", sans-serif';
         const words = ['EXPERIENCE', 'SEAMLESS', 'CONTINUOUS', 'ELEVATE', 'FREEDOM', 'HORIZON'];
         const word = words[(c - 1 + (r - 1) * 3) % words.length];
         ctx.fillText(word, cx, cy);
 
         // Subtitle
-        ctx.fillStyle = '#6AA6DA';
+        ctx.fillStyle = '#74B4DA';
         ctx.font = '700 32px "Outfit", sans-serif';
         ctx.fillText(`SLICEMYBANNER`, cx, cy + 60);
 
         // Safe zone visual hint if Reel Cover
         if (format.id === 'reel_cover') {
-          ctx.strokeStyle = '#6AA6DA';
+          ctx.strokeStyle = '#10367D';
           ctx.lineWidth = 4;
           ctx.setLineDash([12, 12]);
           ctx.strokeRect((c - 1) * dims.tileWidth, (r - 1) * dims.tileHeight + 420, dims.tileWidth, 1080);
           ctx.setLineDash([]);
-          ctx.fillStyle = '#000000';
+          ctx.fillStyle = '#10367D';
           ctx.font = '700 28px "Outfit", sans-serif';
           ctx.fillText('1:1 Profile Safe Zone', cx, (r - 1) * dims.tileHeight + 470);
         }

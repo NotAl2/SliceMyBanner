@@ -32,7 +32,7 @@ export const Logo: React.FC<LogoProps> = ({
 
   if (withBadge) {
     return (
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EBEBEB] border border-[#d8d8d8] flex items-center justify-center p-1.5 shadow-xs transition-transform hover:scale-105 shrink-0">
+      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EBEBEB] border border-[#EBEBEB] flex items-center justify-center p-1.5 shadow-xs transition-transform hover:scale-105 shrink-0">
         {img}
       </div>
     );

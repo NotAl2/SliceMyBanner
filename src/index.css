@@ -6,12 +6,12 @@
   --font-number: 'Nunito', 'Quicksand', system-ui, sans-serif;
   --font-mono: 'Nunito', monospace;
 
-  /* Palette: #10367D (Deep Navy), #EBEBEB (Soft Canvas Gray), #74B4DA (Sky Cerulean Blue) */
-  --color-canvas: #F8F9FA;
+  /* Strict Palette: #10367D (Deep Navy), #EBEBEB (Soft Canvas Gray), #74B4DA (Sky Cerulean Blue), #FFFFFF (White) */
+  --color-canvas: #EBEBEB;
   --color-mist: #EBEBEB;
   --color-cornflower: #10367D;
   --color-pear: #74B4DA;
-  --color-black: #0F172A;
+  --color-black: #10367D;
   --color-royal: #10367D;
   --color-sky: #74B4DA;
   --color-softgray: #EBEBEB;
@@ -24,13 +24,13 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #F8F9FA;
+  background-color: #EBEBEB;
 }
 
 body {
   font-family: var(--font-sans, system-ui, sans-serif);
-  background-color: #F8F9FA;
-  color: #0F172A;
+  background-color: #EBEBEB;
+  color: #10367D;
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -49,14 +49,14 @@ body {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F9FA;
+  background: #EBEBEB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #EBEBEB;
+  background: #74B4DA;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #74B4DA;
+  background: #10367D;
 }
 
 /* Modern Card Styles */
@@ -64,7 +64,7 @@ body {
   background: #ffffff;
   border: 1px solid #EBEBEB;
   border-radius: 1.5rem;
-  box-shadow: 0 4px 20px -2px rgba(16, 54, 125, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px -2px rgba(16, 54, 125, 0.05);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -72,13 +72,13 @@ body {
   background: #ffffff;
   border: 1px solid #EBEBEB;
   border-radius: 1.5rem;
-  box-shadow: 0 4px 20px -2px rgba(16, 54, 125, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px -2px rgba(16, 54, 125, 0.05);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 .modern-card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px -4px rgba(16, 54, 125, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 16px 32px -4px rgba(16, 54, 125, 0.14);
   border-color: #10367D;
 }
 
@@ -98,7 +98,8 @@ body {
   cursor: pointer;
 }
 .btn-primary:hover {
-  background-color: #0b2556;
+  background-color: #10367D;
+  opacity: 0.92;
   transform: translateY(-1px);
   box-shadow: 0 12px 24px -3px rgba(16, 54, 125, 0.45);
 }
@@ -121,7 +122,8 @@ body {
   cursor: pointer;
 }
 .btn-dark:hover {
-  background-color: #0c2b64;
+  background-color: #10367D;
+  opacity: 0.92;
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(16, 54, 125, 0.3);
 }
@@ -136,7 +138,7 @@ body {
   border-radius: 9999px;
   padding: 0.6rem 1.25rem;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 6px rgba(16, 54, 125, 0.04);
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -145,7 +147,7 @@ body {
   cursor: pointer;
 }
 .btn-white:hover {
-  background-color: #F8F9FA;
+  background-color: #EBEBEB;
   border-color: #74B4DA;
   color: #10367D;
 }
@@ -165,7 +167,8 @@ body {
   box-shadow: 0 4px 14px rgba(116, 180, 218, 0.4);
 }
 .btn-pear:hover {
-  background-color: #5ea4ce;
+  background-color: #74B4DA;
+  opacity: 0.92;
   transform: translateY(-1px);
 }
 
@@ -183,12 +186,13 @@ body {
   cursor: pointer;
 }
 .btn-mist:hover {
-  background-color: #dedede;
+  background-color: #EBEBEB;
+  opacity: 0.88;
 }
 
-/* Studio Hero styling: Crisp Canvas with Soft Blue Gradient */
+/* Studio Hero styling: Crisp Canvas with Soft Gray Gradient */
 .hero-gradient-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f4f7fb 60%, #eef4fa 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #EBEBEB 100%);
   border: 1px solid #EBEBEB;
   border-radius: 2.25rem;
 }
