@@ -1,0 +1,21 @@
+{
+  "name": "SliceMyBanner — Instagram Grid & Reel Cover Slicer for Canva",
+  "short_name": "SliceMyBanner",
+  "description": "Free Instagram grid slicer and Canva banner splitter. Calculate exact dimensions and slice banners into high-res tiles.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFBF8",
+  "theme_color": "#FBFBF8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo-theme.png",
+      "sizes": "835x605",
+      "type": "image/png"
+    }
+  ]
+}

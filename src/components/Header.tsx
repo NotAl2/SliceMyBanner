@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-700">
+        <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-slate-700">
           <a
             href="#step-calculator"
             className="hover:text-[#6AA6DA] transition-colors"
@@ -44,6 +44,18 @@ export const Header: React.FC<HeaderProps> = ({
             className="hover:text-[#6AA6DA] transition-colors"
           >
             Upload Banner
+          </a>
+          <a
+            href="#canva-dimensions"
+            className="hover:text-[#6AA6DA] transition-colors"
+          >
+            Dimensions
+          </a>
+          <a
+            href="#faq"
+            className="hover:text-[#6AA6DA] transition-colors"
+          >
+            FAQ
           </a>
           <button
             onClick={onOpenGuide}

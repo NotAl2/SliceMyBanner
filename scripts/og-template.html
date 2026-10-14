@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background-color: #FBFBF8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 56px 64px;
+      position: relative;
+    }
+    /* Subtle decorative background accents */
+    .bg-circle-1 {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(106, 166, 218, 0.12) 0%, rgba(219, 227, 233, 0.05) 70%, transparent 100%);
+      pointer-events: none;
+    }
+    .bg-circle-2 {
+      position: absolute;
+      bottom: -100px;
+      left: 100px;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(225, 229, 172, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Header bar */
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #DBE3E9;
+      border: 1.5px solid #c2cdd7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .brand-name {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .brand-accent {
+      color: #6AA6DA;
+    }
+    .tag-pill {
+      background: #E1E5AC;
+      border: 1px solid #d4da98;
+      color: #000000;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Main Content */
+    .hero-content {
+      z-index: 10;
+      margin-top: 10px;
+      max-width: 1000px;
+    }
+    .headline {
+      font-size: 54px;
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 18px;
+      color: #050505;
+    }
+    .headline span.highlight {
+      color: #6AA6DA;
+      text-decoration: underline;
+      text-decoration-color: #E1E5AC;
+      text-underline-offset: 8px;
+      text-decoration-thickness: 6px;
+    }
+    .subline {
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #4b5563;
+      max-width: 880px;
+    }
+
+    /* Cards / Visual Footer */
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1.5px solid #DBE3E9;
+      padding-top: 24px;
+      z-index: 10;
+    }
+    .feature-pills {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .feature-pill {
+      background: #FFFFFF;
+      border: 1.5px solid #DBE3E9;
+      color: #1f2937;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .feature-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #6AA6DA;
+    }
+    .url-badge {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #DBE3E9;
+      padding: 8px 22px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-circle-1"></div>
+  <div class="bg-circle-2"></div>
+
+  <!-- Header -->
+  <div class="header-bar">
+    <div class="brand">
+      <div class="logo-badge">
+        <img class="logo-img" src="../public/logo-theme.png" alt="SliceMyBanner Logo">
+      </div>
+      <div class="brand-name">
+        Slice<span class="brand-accent">My</span>Banner
+      </div>
+    </div>
+    <div class="tag-pill">
+      Canva IG Banner & Reel Slicer
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1 class="headline">
+      The Free <span class="highlight">Instagram Grid</span> & Reel Cover Slicer for Canva
+    </h1>
+    <p class="subline">
+      Calculate exact Canva dimensions for multi-post puzzle banners & Reel covers. Slice client-side with 0px loss, preview in a live phone simulator, and export numbered tiles in 1 click.
+    </p>
+  </div>
+
+  <!-- Footer Features -->
+  <div class="footer-bar">
+    <div class="feature-pills">
+      <div class="feature-pill">
+        <span class="feature-dot"></span>
+        100% In-Browser & Private
+      </div>
+      <div class="feature-pill">
+        <span class="feature-dot"></span>
+        1:1, 4:5 & 9:16 Formats
+      </div>
+      <div class="feature-pill">
+        <span class="feature-dot"></span>
+        Canva Custom Size Calculator
+      </div>
+      <div class="feature-pill">
+        <span class="feature-dot"></span>
+        Instant ZIP Download
+      </div>
+    </div>
+
+    <div class="url-badge">
+      slice-my-banner.vercel.app
+    </div>
+  </div>
+</body>
+</html>

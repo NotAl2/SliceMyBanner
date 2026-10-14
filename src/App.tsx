@@ -162,8 +162,13 @@ export function App() {
 
               {/* Text content */}
               <div className="space-y-4">
-                <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-black leading-[1.1]">
-                  Experience The Magic Of Flawless Grids!
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E1E5AC] text-black text-xs font-bold uppercase tracking-wider border border-[#d6db9b]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
+                  Experience The Magic Of Flawless Grids
+                </div>
+
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-black leading-[1.15]">
+                  Free Instagram Grid & Reel Cover Slicer for Canva
                 </h1>
 
                 <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed max-w-xl">
@@ -308,6 +313,200 @@ export function App() {
             </section>
           </div>
         )}
+
+        {/* SEO SECTION 1: CANVA SIZING BLUEPRINT REFERENCE TABLE */}
+        <section
+          id="canva-dimensions"
+          className="scroll-mt-24 bg-white rounded-3xl border border-[#DBE3E9] p-6 sm:p-10 shadow-xs space-y-6"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#DBE3E9] pb-6">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#6AA6DA]" />
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  Cheat Sheet & Reference
+                </span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-black tracking-tight">
+                Canva Sizing Blueprint for Instagram Grids & Banners
+              </h2>
+            </div>
+            <button
+              onClick={() => setIsGuideOpen(true)}
+              className="btn-white text-xs py-2 px-4 self-start sm:self-auto cursor-pointer"
+            >
+              Open Full Guide
+            </button>
+          </div>
+
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
+            When creating multi-post panoramic grids or seamless puzzle feeds in Canva, set your canvas to these exact pixel dimensions. Each banner spans 3 horizontal columns across your Instagram profile grid:
+          </p>
+
+          <div className="overflow-x-auto -mx-2 sm:mx-0">
+            <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[620px]">
+              <thead>
+                <tr className="border-b border-[#DBE3E9] text-black font-extrabold text-xs uppercase tracking-wider bg-[#FBFBF8]">
+                  <th className="py-3 px-4 rounded-l-xl">Grid Format</th>
+                  <th className="py-3 px-3">Rows</th>
+                  <th className="py-3 px-3">Posts</th>
+                  <th className="py-3 px-4">Canva Custom Size</th>
+                  <th className="py-3 px-4">Tile Size</th>
+                  <th className="py-3 px-4 rounded-r-xl text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#DBE3E9]/60">
+                <tr className="hover:bg-[#FBFBF8]/80 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-black">1:1 Square Grid (3×1)</td>
+                  <td className="py-3.5 px-3 text-slate-600 font-number">1 Row</td>
+                  <td className="py-3.5 px-3 font-semibold text-black font-number">3 posts</td>
+                  <td className="py-3.5 px-4 font-extrabold font-number text-[#6AA6DA]">3240 × 1080 px</td>
+                  <td className="py-3.5 px-4 text-slate-600 font-number">1080 × 1080 px</td>
+                  <td className="py-3.5 px-4 text-right">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText('3240 x 1080');
+                        showToast('Copied Canva size (3240 × 1080 px)!');
+                      }}
+                      className="px-3 py-1 text-xs font-semibold rounded-full bg-[#DBE3E9] hover:bg-[#6AA6DA] hover:text-white transition-colors cursor-pointer"
+                      title="Copy Canva custom size"
+                    >
+                      Copy Size
+                    </button>
+                  </td>
+                </tr>
+                <tr className="hover:bg-[#FBFBF8]/80 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-black">1:1 Square Grid (3×2)</td>
+                  <td className="py-3.5 px-3 text-slate-600 font-number">2 Rows</td>
+                  <td className="py-3.5 px-3 font-semibold text-black font-number">6 posts</td>
+                  <td className="py-3.5 px-4 font-extrabold font-number text-[#6AA6DA]">3240 × 2160 px</td>
+                  <td className="py-3.5 px-4 text-slate-600 font-number">1080 × 1080 px</td>
+                  <td className="py-3.5 px-4 text-right">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText('3240 x 2160');
+                        showToast('Copied Canva size (3240 × 2160 px)!');
+                      }}
+                      className="px-3 py-1 text-xs font-semibold rounded-full bg-[#DBE3E9] hover:bg-[#6AA6DA] hover:text-white transition-colors cursor-pointer"
+                    >
+                      Copy Size
+                    </button>
+                  </td>
+                </tr>
+                <tr className="hover:bg-[#FBFBF8]/80 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-black">1:1 Square Grid (3×3)</td>
+                  <td className="py-3.5 px-3 text-slate-600 font-number">3 Rows</td>
+                  <td className="py-3.5 px-3 font-semibold text-black font-number">9 posts</td>
+                  <td className="py-3.5 px-4 font-extrabold font-number text-[#6AA6DA]">3240 × 3240 px</td>
+                  <td className="py-3.5 px-4 text-slate-600 font-number">1080 × 1080 px</td>
+                  <td className="py-3.5 px-4 text-right">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText('3240 x 3240');
+                        showToast('Copied Canva size (3240 × 3240 px)!');
+                      }}
+                      className="px-3 py-1 text-xs font-semibold rounded-full bg-[#DBE3E9] hover:bg-[#6AA6DA] hover:text-white transition-colors cursor-pointer"
+                    >
+                      Copy Size
+                    </button>
+                  </td>
+                </tr>
+                <tr className="hover:bg-[#FBFBF8]/80 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-black">4:5 Portrait Feed (3×1)</td>
+                  <td className="py-3.5 px-3 text-slate-600 font-number">1 Row</td>
+                  <td className="py-3.5 px-3 font-semibold text-black font-number">3 posts</td>
+                  <td className="py-3.5 px-4 font-extrabold font-number text-[#6AA6DA]">3240 × 1350 px</td>
+                  <td className="py-3.5 px-4 text-slate-600 font-number">1080 × 1350 px</td>
+                  <td className="py-3.5 px-4 text-right">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText('3240 x 1350');
+                        showToast('Copied Canva size (3240 × 1350 px)!');
+                      }}
+                      className="px-3 py-1 text-xs font-semibold rounded-full bg-[#DBE3E9] hover:bg-[#6AA6DA] hover:text-white transition-colors cursor-pointer"
+                    >
+                      Copy Size
+                    </button>
+                  </td>
+                </tr>
+                <tr className="hover:bg-[#FBFBF8]/80 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-black">9:16 Reel Cover Banner (3×1)</td>
+                  <td className="py-3.5 px-3 text-slate-600 font-number">1 Row</td>
+                  <td className="py-3.5 px-3 font-semibold text-black font-number">3 covers</td>
+                  <td className="py-3.5 px-4 font-extrabold font-number text-[#6AA6DA]">3240 × 1920 px</td>
+                  <td className="py-3.5 px-4 text-slate-600 font-number">1080 × 1920 px</td>
+                  <td className="py-3.5 px-4 text-right">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText('3240 x 1920');
+                        showToast('Copied Canva size (3240 × 1920 px)!');
+                      }}
+                      className="px-3 py-1 text-xs font-semibold rounded-full bg-[#DBE3E9] hover:bg-[#6AA6DA] hover:text-white transition-colors cursor-pointer"
+                    >
+                      Copy Size
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* SEO SECTION 2: FREQUENTLY ASKED QUESTIONS */}
+        <section
+          id="faq"
+          className="scroll-mt-24 bg-white rounded-3xl border border-[#DBE3E9] p-6 sm:p-10 shadow-xs space-y-6"
+        >
+          <div className="border-b border-[#DBE3E9] pb-6">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#E1E5AC]" />
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Common Questions
+              </span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-black tracking-tight">
+              Frequently Asked Questions About Instagram Grid Slicing
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-5 rounded-2xl bg-[#FBFBF8] border border-[#DBE3E9] space-y-2">
+              <h3 className="font-extrabold text-sm sm:text-base text-black">
+                How do I split a Canva banner into an Instagram 3-post grid?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Create a custom size canvas in Canva sized <strong>3240 × 1080 px</strong> (for 1:1 squares) or <strong>3240 × 1350 px</strong> (for 4:5 portrait feeds). Design your artwork across the entire banner, download as a high-quality PNG, and upload it into SliceMyBanner to split it into 3 equal 1080px columns.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-[#FBFBF8] border border-[#DBE3E9] space-y-2">
+              <h3 className="font-extrabold text-sm sm:text-base text-black">
+                Why do I need to post Instagram grid slices in reverse order?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Instagram automatically places your newest post at the top-left of your profile, pushing previous posts to the right. To make your banner read left-to-right, upload the bottom-right tile first (e.g. <code className="bg-[#DBE3E9] px-1.5 py-0.5 rounded text-[11px] font-mono">tile_03.png</code>) and the top-left tile last (e.g. <code className="bg-[#DBE3E9] px-1.5 py-0.5 rounded text-[11px] font-mono">tile_01.png</code>).
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-[#FBFBF8] border border-[#DBE3E9] space-y-2">
+              <h3 className="font-extrabold text-sm sm:text-base text-black">
+                How does SliceMyBanner protect my image privacy?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                SliceMyBanner operates 100% client-side in your browser using the HTML5 Canvas API. Your pictures are never uploaded to any remote server or stored in the cloud. It's completely private and safe.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-[#FBFBF8] border border-[#DBE3E9] space-y-2">
+              <h3 className="font-extrabold text-sm sm:text-base text-black">
+                Can I use SliceMyBanner for 9:16 Instagram Reel cover banners?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Yes! When creating 3 Reel covers side-by-side, set Canva to <strong>3240 × 1920 px</strong>. SliceMyBanner includes safe-zone overlays so your key text remains centered when Instagram crops the cover to 1:1 on your profile feed and 4:5 in the Reels tab.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
