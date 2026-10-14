@@ -9,7 +9,7 @@ interface DonateModalProps {
   isOpen: boolean;
   onClose: () => void;
   isImageDone?: boolean;
-  onDonated?: () => void;
+  onDonated?: (amount: number) => void;
 }
 
 interface TierOption {
@@ -70,12 +70,19 @@ export const DonateModal: React.FC<DonateModalProps> = ({
 
   const handleSupportClick = () => {
     triggerConfetti();
-    if (onDonated) onDonated();
 
-    // Construct BMC URL with selected amount or coffees
-    const coffeesCount = Math.max(1, Math.round(currentAmount / 5));
-    const targetUrl = `${BUY_ME_A_COFFEE_URL}?coffees=${coffeesCount}&amount=${currentAmount}`;
-    window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    // Auto-copy the amount to user's clipboard for easy pasting
+    try {
+      navigator.clipboard.writeText(String(currentAmount));
+    } catch {
+      // ignore clipboard error if blocked
+    }
+
+    if (onDonated) {
+      onDonated(currentAmount);
+    }
+
+    window.open(BUY_ME_A_COFFEE_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -218,6 +225,14 @@ export const DonateModal: React.FC<DonateModalProps> = ({
                 <span className="text-xs text-[#261A66]/70 font-medium">USD</span>
               </div>
             )}
+          </div>
+
+          {/* Clipboard Copy Tip */}
+          <div className="bg-[#EF5F18]/10 border border-[#EF5F18]/30 rounded-2xl p-3 flex items-start gap-2.5">
+            <Sparkles className="w-4 h-4 text-[#EF5F18] shrink-0 mt-0.5" />
+            <p className="text-xs text-[#261A66]/80 leading-relaxed font-medium">
+              Clicking below automatically copies <strong>${currentAmount}</strong> to your clipboard so you can easily paste or enter it on Buy Me a Coffee!
+            </p>
           </div>
 
           {/* Impact note */}

@@ -587,8 +587,8 @@ export function App() {
         isOpen={isDonateOpen}
         onClose={() => setIsDonateOpen(false)}
         isImageDone={isImageDonePopup}
-        onDonated={() => {
-          showToast('Thank you so much for your support! ☕💖');
+        onDonated={(amount) => {
+          showToast(`Copied $${amount}! Paste or enter it on Buy Me a Coffee ☕`);
           setIsDonateOpen(false);
         }}
       />
