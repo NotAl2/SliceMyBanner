@@ -3,7 +3,7 @@ import { X, Coffee, Heart, Check, Sparkles, ExternalLink } from 'lucide-react';
 import { triggerConfetti } from '../utils/animations';
 
 // Customizable Buy Me a Coffee creator profile URL
-export const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/notal';
+export const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/notal2';
 
 interface DonateModalProps {
   isOpen: boolean;
