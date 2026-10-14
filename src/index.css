@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Comfortaa', 'Outfit', system-ui, sans-serif;
-  --font-sans: 'Comfortaa', 'Outfit', system-ui, sans-serif;
-  --font-number: 'Comfortaa', 'Nunito', system-ui, sans-serif;
-  --font-mono: 'Comfortaa', monospace;
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-number: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-condensed: 'Oswald', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
 
   /* Palette: #261A66 (Scarlet Bikini / Deep Indigo), #EF5F18 (Vibrant Orange), #FFFFFF (White), #F5F4F8 (Canvas Tint) */
   --color-canvas: #F5F4F8;
@@ -28,7 +29,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans, 'Comfortaa', system-ui, sans-serif);
+  font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif);
   background-color: #F5F4F8;
   color: #261A66;
   min-height: 100vh;
@@ -38,9 +39,13 @@ body {
 
 /* Soft, elegant typography for numbers */
 .font-number {
-  font-family: var(--font-number, 'Comfortaa', sans-serif);
+  font-family: var(--font-number, 'Plus Jakarta Sans', sans-serif);
   font-variant-numeric: tabular-nums proportional-nums;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
+}
+
+.font-condensed {
+  font-family: var(--font-condensed, 'Oswald', sans-serif);
 }
 
 /* Custom scrollbars */

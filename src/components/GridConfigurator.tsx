@@ -60,10 +60,10 @@ export const GridConfigurator: React.FC<GridConfiguratorProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2.5 mb-1">
-            <span className="w-7 h-7 rounded-full bg-[#EF5F18] text-[#261A66] font-bold font-number text-xs flex items-center justify-center border border-[#EF5F18]">
+            <span className="w-7 h-7 rounded-full bg-[#EF5F18] text-white font-bold font-number text-xs flex items-center justify-center border border-[#EF5F18]">
               1
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#261A66] tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-[#261A66] tracking-tight">
               Pick Your Post Style
             </h2>
           </div>
