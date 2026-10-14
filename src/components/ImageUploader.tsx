@@ -96,7 +96,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2.5 mb-1">
-            <span className="w-7 h-7 rounded-full bg-[#74B4DA] text-black font-bold font-number text-xs flex items-center justify-center border border-[#5fa7cf]">
+            <span className="w-7 h-7 rounded-full bg-[#E1E5AC] text-black font-bold font-number text-xs flex items-center justify-center border border-[#d6db9b]">
               2
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">
@@ -128,10 +128,10 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
         onClick={() => fileInputRef.current?.click()}
         className={`p-8 sm:p-12 text-center rounded-3xl transition-all duration-300 cursor-pointer relative overflow-hidden ${
           isDragging
-            ? 'bg-[#EBEBEB]/50 border-2 border-dashed border-[#10367D] scale-[1.005]'
+            ? 'bg-[#DBE3E9]/50 border-2 border-dashed border-[#6AA6DA] scale-[1.005]'
             : uploadedImage
-            ? 'bg-white border border-[#EBEBEB] shadow-xs'
-            : 'bg-gradient-to-b from-[#F8F9FA] to-white border-2 border-dashed border-[#EBEBEB] hover:border-[#10367D] hover:shadow-md'
+            ? 'bg-white border border-[#DBE3E9] shadow-xs'
+            : 'bg-gradient-to-b from-[#FBFBF8] to-white border-2 border-dashed border-[#DBE3E9] hover:border-[#6AA6DA] hover:shadow-md'
         }`}
       >
         <input
@@ -144,7 +144,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
 
         {uploadedImage ? (
           <div className="flex flex-col items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#74B4DA] border border-[#5fa7cf] flex items-center justify-center text-black shadow-xs">
+            <div className="w-16 h-16 rounded-full bg-[#E1E5AC] border border-[#d6db9b] flex items-center justify-center text-black shadow-xs">
               <CheckCircle2 className="w-8 h-8 stroke-[2.2]" />
             </div>
 
@@ -160,12 +160,12 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
             {/* Aspect Ratio Validation Status */}
             <div className="flex items-center gap-2 pt-1">
               {ratioMatch ? (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#74B4DA] text-black border border-[#5fa7cf] text-xs font-bold">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E1E5AC] text-black border border-[#d6db9b] text-xs font-bold">
                   <CheckCircle2 className="w-3.5 h-3.5 text-black" />
                   <span>Aspect ratio matches ({format.name} • <span className="font-number">{rows}</span> rows)</span>
                 </div>
               ) : (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBEBEB] text-black border border-[#d8d8d8] text-xs font-semibold">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DBE3E9] text-black border border-[#c5d1dd] text-xs font-semibold">
                   <AlertTriangle className="w-3.5 h-3.5" />
                   <span>
                     Aspect mismatch (<span className="font-number">{(ratioDiffPercent * 100).toFixed(0)}%</span> diff). Will fit nicely.
@@ -191,7 +191,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
           </div>
         ) : (
           <div className="space-y-4 max-w-md mx-auto">
-            <div className="w-16 h-16 rounded-full bg-[#EBEBEB] border border-[#EBEBEB] flex items-center justify-center text-black mx-auto shadow-xs">
+            <div className="w-16 h-16 rounded-full bg-[#DBE3E9] border border-[#DBE3E9] flex items-center justify-center text-black mx-auto shadow-xs">
               <UploadCloud className="w-8 h-8 stroke-[2]" />
             </div>
 
@@ -214,7 +214,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
               </button>
             </div>
 
-            <div className="pt-3 border-t border-[#EBEBEB] text-xs text-slate-600 font-medium flex items-center justify-center gap-2">
+            <div className="pt-3 border-t border-[#DBE3E9] text-xs text-slate-600 font-medium flex items-center justify-center gap-2">
               <span>Expected size:</span>
               <strong className="text-black font-number font-bold">
                 {dims.width} × {dims.height} px

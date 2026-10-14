@@ -14,19 +14,19 @@ export const Header: React.FC<HeaderProps> = ({
   hasUploadedImage,
 }) => {
   return (
-    <header className="w-full bg-[#F8F9FA]/90 backdrop-blur-md border-b border-[#EBEBEB] sticky top-0 z-40 transition-all">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
-        {/* Brand / Logo */}
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EBEBEB] border border-[#d8d8d8] flex items-center justify-center p-1 sm:p-1.5 shadow-xs shrink-0 transition-transform hover:scale-105">
+    <header className="w-full bg-[#FBFBF8]/90 backdrop-blur-md border-b border-[#DBE3E9] sticky top-0 z-40 transition-all">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+        {/* Brand / Logo - Exactly matches card header */}
+        <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#DBE3E9] border border-[#c2cdd7] flex items-center justify-center p-1.5 shadow-xs shrink-0 transition-transform hover:scale-105">
             <Logo variant="theme" className="w-full h-full object-contain" />
           </div>
-          <div className="flex items-center gap-2">
-            <span className="font-extrabold text-base sm:text-xl tracking-tight text-[#10367D]">
-              Slice<span className="text-[#74B4DA]">My</span>Banner
+          <div className="flex items-center gap-2.5">
+            <span className="font-extrabold text-lg sm:text-2xl tracking-tight text-black">
+              Slice<span className="text-[#6AA6DA]">My</span>Banner
             </span>
-            <span className="hidden sm:inline-flex px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-[#74B4DA]/20 text-[#10367D] border border-[#74B4DA]/40 rounded-full">
-              IG Banner Slicer
+            <span className="hidden lg:inline-flex px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider bg-[#E1E5AC] text-black border border-[#d4da98] rounded-full">
+              CANVA IG BANNER & REEL SLICER
             </span>
           </div>
         </div>
@@ -35,39 +35,38 @@ export const Header: React.FC<HeaderProps> = ({
         <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-slate-700">
           <a
             href="#step-calculator"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#6AA6DA] transition-colors"
           >
             Sizing Blueprint
           </a>
           <a
             href="#step-uploader"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#6AA6DA] transition-colors"
           >
             Upload Banner
           </a>
           <a
             href="#canva-dimensions"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#6AA6DA] transition-colors"
           >
             Dimensions
           </a>
           <a
             href="#faq"
-            className="hover:text-[#10367D] transition-colors"
+            className="hover:text-[#6AA6DA] transition-colors"
           >
             FAQ
           </a>
           <button
             onClick={onOpenGuide}
-            className="hover:text-[#10367D] transition-colors cursor-pointer"
+            className="hover:text-[#6AA6DA] transition-colors cursor-pointer"
           >
             Canva Guide
           </button>
         </nav>
 
-        {/* Quick Actions (matching pill buttons in reference) */}
+        {/* Quick Actions */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
-
           {hasUploadedImage && (
             <button
               onClick={onReset}
