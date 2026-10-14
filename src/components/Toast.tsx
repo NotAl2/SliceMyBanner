@@ -18,8 +18,8 @@ export const Toast: React.FC<ToastProps> = ({ message, onClose }) => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-5 fade-in duration-200">
-      <div className="bg-black text-white px-4 py-3 rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.25)] border border-[#DBE3E9]/20 flex items-center gap-3">
-        <div className="w-6 h-6 rounded-full bg-[#E1E5AC] text-black flex items-center justify-center shrink-0">
+      <div className="bg-black text-white px-4 py-3 rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.25)] border border-[#EBEBEB]/20 flex items-center gap-3">
+        <div className="w-6 h-6 rounded-full bg-[#74B4DA] text-black flex items-center justify-center shrink-0">
           <CheckCircle2 className="w-4 h-4 stroke-[2.5]" />
         </div>
         <p className="text-xs font-semibold text-white pr-1">{message}</p>

@@ -18,8 +18,8 @@ export function generateDemoBanner(
 
     // Studio gradient background: Canvas + Mist + subtle Cornflower & Pear tint
     const bgGradient = ctx.createLinearGradient(0, 0, w, h);
-    bgGradient.addColorStop(0, '#DBE3E9'); // Mist
-    bgGradient.addColorStop(0.5, '#FBFBF8'); // Canvas
+    bgGradient.addColorStop(0, '#EBEBEB'); // Mist
+    bgGradient.addColorStop(0.5, '#F8F9FA'); // Canvas
     bgGradient.addColorStop(1, '#eaf0f5');
     ctx.fillStyle = bgGradient;
     ctx.fillRect(0, 0, w, h);
@@ -103,13 +103,13 @@ export function generateDemoBanner(
         ctx.fillText(word, cx, cy);
 
         // Subtitle
-        ctx.fillStyle = '#6AA6DA';
+        ctx.fillStyle = '#10367D';
         ctx.font = '700 32px "Outfit", sans-serif';
         ctx.fillText(`SLICEMYBANNER`, cx, cy + 60);
 
         // Safe zone visual hint if Reel Cover
         if (format.id === 'reel_cover') {
-          ctx.strokeStyle = '#6AA6DA';
+          ctx.strokeStyle = '#10367D';
           ctx.lineWidth = 4;
           ctx.setLineDash([12, 12]);
           ctx.strokeRect((c - 1) * dims.tileWidth, (r - 1) * dims.tileHeight + 420, dims.tileWidth, 1080);

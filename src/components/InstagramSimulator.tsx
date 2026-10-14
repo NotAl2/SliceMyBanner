@@ -38,7 +38,7 @@ export const InstagramSimulator: React.FC<InstagramSimulatorProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2.5 mb-1">
-            <span className="w-7 h-7 rounded-full bg-[#E1E5AC] text-black font-bold font-number text-xs flex items-center justify-center border border-[#d6db9b]">
+            <span className="w-7 h-7 rounded-full bg-[#74B4DA] text-black font-bold font-number text-xs flex items-center justify-center border border-[#5fa7cf]">
               3
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">
@@ -53,7 +53,7 @@ export const InstagramSimulator: React.FC<InstagramSimulatorProps> = ({
         {/* Simulator controls */}
         <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
           {/* Tab selector */}
-          <div className="flex items-center bg-[#DBE3E9]/50 p-1 rounded-full border border-[#DBE3E9] text-xs">
+          <div className="flex items-center bg-[#EBEBEB]/50 p-1 rounded-full border border-[#EBEBEB] text-xs">
             <button
               onClick={() => setSimulatorTab('grid')}
               className={`flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
@@ -62,7 +62,7 @@ export const InstagramSimulator: React.FC<InstagramSimulatorProps> = ({
                   : 'text-slate-700 hover:text-black'
               }`}
             >
-              <Grid className={`w-3.5 h-3.5 ${simulatorTab === 'grid' ? 'text-[#E1E5AC]' : 'text-[#6AA6DA]'}`} />
+              <Grid className={`w-3.5 h-3.5 ${simulatorTab === 'grid' ? 'text-[#74B4DA]' : 'text-[#10367D]'}`} />
               <span className="hidden sm:inline">Profile Grid</span>
               <span className="sm:hidden">Grid</span>
             </button>
@@ -76,7 +76,7 @@ export const InstagramSimulator: React.FC<InstagramSimulatorProps> = ({
                     : 'text-slate-700 hover:text-black'
                 }`}
               >
-                <Film className={`w-3.5 h-3.5 ${simulatorTab === 'reels' ? 'text-[#E1E5AC]' : 'text-[#6AA6DA]'}`} />
+                <Film className={`w-3.5 h-3.5 ${simulatorTab === 'reels' ? 'text-[#74B4DA]' : 'text-[#10367D]'}`} />
                 <span className="hidden sm:inline">Reels Tab</span>
                 <span className="sm:hidden">Reels</span>
               </button>
@@ -90,7 +90,7 @@ export const InstagramSimulator: React.FC<InstagramSimulatorProps> = ({
                   : 'text-slate-700 hover:text-black'
               }`}
             >
-              <Heart className={`w-3.5 h-3.5 ${simulatorTab === 'feed' ? 'text-[#E1E5AC]' : 'text-rose-500'}`} />
+              <Heart className={`w-3.5 h-3.5 ${simulatorTab === 'feed' ? 'text-[#74B4DA]' : 'text-rose-500'}`} />
               <span className="hidden sm:inline">Feed Post</span>
               <span className="sm:hidden">Feed</span>
             </button>
@@ -99,7 +99,7 @@ export const InstagramSimulator: React.FC<InstagramSimulatorProps> = ({
           {/* Theme toggle */}
           <button
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            className="p-2 rounded-full bg-white hover:bg-[#FBFBF8] text-black border border-[#DBE3E9] shadow-xs transition-colors cursor-pointer"
+            className="p-2 rounded-full bg-white hover:bg-[#F8F9FA] text-black border border-[#EBEBEB] shadow-xs transition-colors cursor-pointer"
             title="Toggle Phone Dark/Light Mode"
           >
             {isDark ? <Sun className="w-4 h-4 text-amber-500" /> : <Moon className="w-4 h-4" />}
@@ -148,7 +148,7 @@ export const InstagramSimulator: React.FC<InstagramSimulatorProps> = ({
                 <div className="flex items-center justify-between">
                   <div className="relative">
                     <div className="w-18 h-18 rounded-full p-0.5 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600">
-                      <div className="w-full h-full rounded-full bg-[#FBFBF8] flex items-center justify-center p-2 border-2 border-white shadow-xs overflow-hidden">
+                      <div className="w-full h-full rounded-full bg-[#F8F9FA] flex items-center justify-center p-2 border-2 border-white shadow-xs overflow-hidden">
                         <Logo variant="theme" className="w-full h-full object-contain" />
                       </div>
                     </div>
