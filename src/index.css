@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Outfit', system-ui, sans-serif;
-  --font-sans: 'Outfit', system-ui, sans-serif;
-  --font-number: 'Nunito', 'Quicksand', system-ui, sans-serif;
-  --font-mono: 'Nunito', monospace;
+  --font-display: 'Comfortaa', 'Outfit', system-ui, sans-serif;
+  --font-sans: 'Comfortaa', 'Outfit', system-ui, sans-serif;
+  --font-number: 'Comfortaa', 'Nunito', system-ui, sans-serif;
+  --font-mono: 'Comfortaa', monospace;
 
   /* Strict Palette: #10367D (Deep Navy), #EBEBEB (Soft Canvas Gray), #74B4DA (Sky Cerulean Blue), #FFFFFF (White) */
   --color-canvas: #EBEBEB;
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans, system-ui, sans-serif);
+  font-family: var(--font-sans, 'Comfortaa', system-ui, sans-serif);
   background-color: #EBEBEB;
   color: #10367D;
   min-height: 100vh;
@@ -38,7 +38,7 @@ body {
 
 /* Soft, elegant typography for numbers */
 .font-number {
-  font-family: var(--font-number, 'Nunito', sans-serif);
+  font-family: var(--font-number, 'Comfortaa', sans-serif);
   font-variant-numeric: tabular-nums proportional-nums;
   letter-spacing: -0.015em;
 }

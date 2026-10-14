@@ -91,20 +91,20 @@ export function generateDemoBanner(
 
         // Column indicator pill
         ctx.fillStyle = '#10367D';
-        ctx.font = '700 30px "Outfit", sans-serif';
+        ctx.font = '700 30px "Comfortaa", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(`TILE ${c + (r - 1) * 3} OF ${dims.totalTiles}`, cx, cy - 80);
 
         // Big Modern geometric headline across the tiles
         ctx.fillStyle = '#10367D';
-        ctx.font = '800 80px "Outfit", sans-serif';
+        ctx.font = '700 74px "Comfortaa", sans-serif';
         const words = ['EXPERIENCE', 'SEAMLESS', 'CONTINUOUS', 'ELEVATE', 'FREEDOM', 'HORIZON'];
         const word = words[(c - 1 + (r - 1) * 3) % words.length];
         ctx.fillText(word, cx, cy);
 
         // Subtitle
         ctx.fillStyle = '#74B4DA';
-        ctx.font = '700 32px "Outfit", sans-serif';
+        ctx.font = '700 32px "Comfortaa", sans-serif';
         ctx.fillText(`SLICEMYBANNER`, cx, cy + 60);
 
         // Safe zone visual hint if Reel Cover
@@ -115,7 +115,7 @@ export function generateDemoBanner(
           ctx.strokeRect((c - 1) * dims.tileWidth, (r - 1) * dims.tileHeight + 420, dims.tileWidth, 1080);
           ctx.setLineDash([]);
           ctx.fillStyle = '#10367D';
-          ctx.font = '700 28px "Outfit", sans-serif';
+          ctx.font = '700 28px "Comfortaa", sans-serif';
           ctx.fillText('1:1 Profile Safe Zone', cx, (r - 1) * dims.tileHeight + 470);
         }
       }
